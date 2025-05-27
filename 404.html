@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - Saum</title>
+  <meta name="description" content="Page not found - Saum">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Saum" />
+  <link rel="manifest" href="images/site.webmanifest" />
+  
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-color: #c9b18c;
+      --secondary-color: #f5f0e6;
+      --text-color: #3a3a3a;
+      --accent-color: #8a754d;
+      --light-bg: #faf7f2;
+      --white: #ffffff;
+      --menu-active-color: #FF8C00;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cormorant Garamond', 'Palatino', serif;
+    }
+    
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      margin: 1rem 0;
+      letter-spacing: 1px;
+    }
+    
+    .btn:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: var(--white);
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo img {
+      width: 130px;
+      height: auto;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 2rem;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+      color: var(--menu-active-color);
+    }
+    
+    /* 404 Content */
+    .error-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    
+    .error-content h1 {
+      font-size: 4rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .error-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--text-color);
+      color: var(--white);
+      padding: 2rem 0;
+      margin-top: auto;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-column h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-column p {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-column a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 1.1rem;
+    }
+    
+    .footer-column a:hover {
+      color: var(--primary-color);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      
+      nav ul {
+        margin-top: 1rem;
+      }
+      
+      nav ul li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      
+      .error-content h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo"><img src="images/SaumLogo.png" alt="SAUM"></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="temples/index.html">Temple Tourism</a></li>
+          <li><a href="products/index.html">Premium Products</a></li>
+          <li><a href="contact/index.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="error-content">
+    <div class="container">
+      <h1>404</h1>
+      <p>Oops! The page you're looking for seems to have wandered off into the spiritual realm.</p>
+      <p>Let's guide you back to the path of enlightenment.</p>
+      <a href="index.html" class="btn">Return Home</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Saum</h3>
+          <p>At Saum, we invite you to step into a world where spiritual discovery meets curated comfort.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="temples/index.html">Temple Tourism</a></li>
+            <li><a href="products/index.html">Premium Products</a></li>
+            <li><a href="contact/index.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Connect With Us</h3>
+          <p>Join our community for exclusive offers and spiritual insights.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/people/Saum/61568650954788/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/saum.india"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@saumindia"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/saumindia"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/saum-in/"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Saum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html> 
