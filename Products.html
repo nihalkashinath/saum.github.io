@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saum - Premium Products</title>
+  <meta name="description" content="Curated Temple Tourism and Premium Religious Products">
+  
+  <!-- Open Graph Meta Tags (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:title" content="Saum - Premium Products">
+  <meta property="og:description" content="Curated Temple Tourism and Premium Religious Products">
+  <meta property="og:image" content="https://www.saum.in/images/TirupatiPreview.jpg">
+  <meta property="og:url" content="https://www.saum.in/products.html">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saum - Premium Products">
+  <meta name="twitter:description" content="Curated Temple Tourism and Premium Religious Products">
+  <meta name="twitter:image" content="https://www.saum.in/images/TirupatiPreview.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Saum" />
+  <link rel="manifest" href="images/site.webmanifest" />
+  
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-color: #c9b18c;
+      --secondary-color: #f5f0e6;
+      --text-color: #3a3a3a;
+      --accent-color: #8a754d;
+      --light-bg: #faf7f2;
+      --white: #ffffff;
+      --menu-active-color: #FF8C00;  /* Saffron/Orange color for selected menu items */
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cormorant Garamond', 'Palatino', serif;
+    }
+    
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      margin: 1rem 0;
+      letter-spacing: 1px;
+    }
+    
+    .btn:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: var(--white);
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 2rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+    
+    .logo img {
+      width: 130px;
+      height: auto;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 2rem;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    nav ul li a:hover, nav ul li a.active {
+      color: var(--menu-active-color);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/PremiumProducts.webp') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-align: center;
+      margin-top: 5rem;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* Section Styles */
+    .section {
+      padding: 5rem 0;
+      background-color: var(--secondary-color);
+      margin: 0;
+    }
+    
+    .section:nth-child(even) {
+      background-color: var(--secondary-color);
+    }
+    
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    /* Product Cards */
+    .product-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .product-card {
+      background-color: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product-img {
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .product-info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .product-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    
+    .product-info .price {
+      font-weight: bold;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+    
+    .product-btns {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .product-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      flex: 1;
+      margin: 0 0.5rem;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--text-color);
+      color: var(--white);
+      padding: 3rem 0;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-column h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-column a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-column a:hover {
+      color: var(--primary-color);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      color: var(--white);
+      background-color: rgba(255,255,255,0.1);
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background-color: var(--primary-color);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      
+      nav ul {
+        margin-top: 1rem;
+      }
+      
+      nav ul li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      
+      .hero {
+        height: 70vh;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+  
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo"><img src="images/SaumLogo.png" alt="SAUM" style="width: 150px; height: auto;"></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Temples.html">Temple Tourism</a></li>
+          <li><a href="Products.html" class="active">Premium Products</a></li>
+          <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Incense Sticks and Products</h1>
+      <p>At Saum, we believe in the transformative power of fragrance.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p>Our carefully curated incense products are designed to evoke positive emotions, promote relaxation, and inspire a sense of well-being. Each of our three unique fragrances is crafted using natural ingredients, ensuring a pure and refreshing experience that is both subtle and impactful.</p>
+        <p>Embrace the tranquility and fulfillment that Saum offers, and discover the serenity within.</p>
+      </div>
+      
+      <div class="product-cards">
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('images/Loban100.jpg');"></div>
+          <div class="product-info">
+            <h3>Loban</h3>
+            <p>Resin-rich aroma that purifies your space and uplifts the soul.</p>
+            <p>Available in: 100 g | 200 g</p>
+            <p class="price">Price: ₹300 onwards</p>
+            <div class="product-btns">
+              <a href="https://www.amazon.in/dp/B0F4XW84XR" target="_blank" rel="noopener noreferrer" class="btn product-btn">Buy on Amazon</a>
+              <a href="#" class="btn product-btn">Buy on Flipkart</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('images/Lavender100.jpg');"></div>
+          <div class="product-info">
+            <h3>Lavender</h3>
+            <p>Floral, calming, and perfect for relaxation.</p>
+            <p>Available in: 100 g | 200 g</p>
+            <p class="price">Price: ₹300 onwards</p>
+            <div class="product-btns">
+              <a href="https://www.amazon.in/Handcrafted-Natural-Premium-Lavender-Incense/dp/B0F5PZZ2W8/" target="_blank" rel="noopener noreferrer" class="btn product-btn">Buy on Amazon</a>
+              <a href="#" class="btn product-btn">Buy on Flipkart</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('images/Sandalwood100.jpg');"></div>
+          <div class="product-info">
+            <h3>Sandalwood</h3>
+            <p>Warm, sacred, ideal for meditation and daily rituals.</p>
+            <p>Available in: 100 g | 200 g</p>
+            <p class="price">Price: ₹300 onwards</p>
+            <div class="product-btns">
+              <a href="https://www.amazon.in/Handrolled-Natural-Premium-Sandalwood-Incense/dp/B0F4XTS46F" target="_blank" rel="noopener noreferrer" class="btn product-btn">Buy on Amazon</a>
+              <a href="#" class="btn product-btn">Buy on Flipkart</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('images/Combo50.jpg');"></div>
+          <div class="product-info">
+            <h3>Combination Pack</h3>
+            <p>All 3 of our fragrances in a single pack.</p>
+            <p>Available in: 150 g (50 g * 3)</p>
+            <p class="price">Price: ₹300 onwards</p>
+            <div class="product-btns">
+              <a href="https://www.amazon.in/Saum-Handrolled-Premium-Incense-Sticks/dp/B0F5X29R2R" target="_blank" rel="noopener noreferrer" class="btn product-btn">Buy on Amazon</a>
+              <a href="#" class="btn product-btn">Buy on Flipkart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Saum</h3>
+          <p>At Saum, we invite you to step into a world where spiritual discovery meets curated comfort.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Temples.html">Temple Tourism</a></li>
+            <li><a href="Products.html">Premium Products</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Connect With Us</h3>
+          <p>Join our community for exclusive offers and spiritual insights.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/people/Saum/61568650954788/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/saum.india"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@saumindia"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/saumindia"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/saum-in/"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Saum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html> 

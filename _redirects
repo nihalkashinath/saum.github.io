@@ -1,0 +1,9 @@
+# Redirect all domain variations to www.saum.in
+https://saum.in/* https://www.saum.in/:splat 301!
+http://saum.in/* https://www.saum.in/:splat 301!
+http://www.saum.in/* https://www.saum.in/:splat 301!
+
+# Handle clean URLs
+/temples /temples.html 200
+/products /products.html 200
+/contact /contact.html 200 

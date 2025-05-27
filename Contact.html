@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saum - Contact Us</title>
+  <meta name="description" content="Connect with Saum for Temple Tourism and Premium Religious Products">
+  
+  <!-- Open Graph Meta Tags (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:title" content="Saum - Contact Us">
+  <meta property="og:description" content="Connect with Saum for Temple Tourism and Premium Religious Products">
+  <meta property="og:image" content="https://www.saum.in/images/ContactUs.jpg">
+  <meta property="og:url" content="https://www.saum.in/Contact.html">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saum - Contact Us">
+  <meta name="twitter:description" content="Connect with Saum for Temple Tourism and Premium Religious Products">
+  <meta name="twitter:image" content="https://www.saum.in/images/ContactUs.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Saum" />
+  <link rel="manifest" href="images/site.webmanifest" />
+  
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-color: #c9b18c;
+      --secondary-color: #f5f0e6;
+      --text-color: #3a3a3a;
+      --accent-color: #8a754d;
+      --light-bg: #faf7f2;
+      --white: #ffffff;
+      --menu-active-color: #FF8C00;  /* Saffron/Orange color for selected menu items */
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cormorant Garamond', 'Palatino', serif;
+    }
+    
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      margin: 1rem 0;
+      letter-spacing: 1px;
+    }
+    
+    .btn:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: var(--white);
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 2rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+    
+    .logo img {
+      width: 130px;
+      height: auto;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 2rem;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    nav ul li a:hover, nav ul li a.active {
+      color: var(--menu-active-color);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/ContactUs.jpg') center/cover no-repeat;
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-align: center;
+      margin-top: 5rem;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      padding: 0 2rem;
+      padding-top: 2rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* Section Styles */
+    .section {
+      padding: 5rem 0;
+      background-color: var(--secondary-color);
+      margin: 0;
+    }
+    
+    .section:nth-child(even) {
+      background-color: var(--primary-color);
+    }
+    
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    /* Contact Form Styles */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .contact-form {
+      order: 1;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .contact-info {
+      order: 2;
+      padding: 2rem;
+      background-color: var(--secondary-color);
+      border-radius: 8px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-method i {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-right: 3rem;
+      width: 40px;
+      text-align: center;
+      margin-top: 0.4rem;
+    }
+
+    .contact-text {
+      flex: 1;
+      padding-top: 0;
+    }
+
+    .contact-text h4 {
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+
+    .contact-text p {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .optional-label {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .form-submit {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .success-message {
+      display: none;
+      padding: 1.5rem;
+      background-color: #d4edda;
+      color: #155724;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+      text-align: center;
+      border: 1px solid #c3e6cb;
+      order: 2;
+    }
+
+    .success-message.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-info h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .contact-info h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary-color);
+    }
+
+    .contact-info p {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+
+    .consent-checkbox {
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .consent-checkbox input[type="checkbox"] {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .consent-checkbox label {
+      display: inline;
+      font-size: 0.95rem;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--text-color);
+      color: var(--white);
+      padding: 3rem 0;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-column h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-column a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-column a:hover {
+      color: var(--primary-color);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      color: var(--white);
+      background-color: rgba(255,255,255,0.1);
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background-color: var(--primary-color);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      
+      nav ul {
+        margin-top: 1rem;
+      }
+      
+      nav ul li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .contact-form {
+        order: 1;
+      }
+      
+      .contact-info {
+        order: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo"><img src="images/SaumLogo.png" alt="SAUM" style="width: 150px; height: auto;"></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Temples.html">Temple Tourism</a></li>
+          <li><a href="Products.html">Premium Products</a></li>
+          <li><a href="Contact.html" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Connect With Us</h1>
+      <p>We're here to guide you on your sacred journey.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <!-- <h2>Reach Out to Saum</h2> -->
+       
+        <p>Please share your details below and our team will call you to plan your next divine pilgrimage. You can also reach out to us if you have questions about our temple journeys, need assistance with product selection, or simply want to learn more about Saum. We're happy to help.</p> 
+        </div>
+        <div class="contact-container">
+          <div class="contact-form">
+            <form id="contactForm" onsubmit="submitForm(event)">
+              <div class="form-group">
+                <label for="name">Name*</label>
+                <input type="text" id="name" name="entry.2050509957" required>
+              </div>
+              <div class="form-group">
+                <label for="city">City*</label>
+                <input type="text" id="city" name="entry.2014457755" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone*</label>
+                <input type="tel" id="phone" name="entry.1854073633" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="optional-label">(optional)</span></label>
+                <input type="email" id="email" name="entry.735752030">
+              </div>
+              <div class="form-group">
+                <label for="temple">Temple of Interest <span class="optional-label">(optional)</span></label>
+                <select id="temple" name="entry.415658475">
+                  <option value="">-- Select a Temple --</option>
+                  <option value="Kashi Vishwanath">Kashi Vishwanath</option>
+                  <option value="Kukke Subramanya">Kukke Subramanya</option>
+                  <option value="Tirupati">Tirupati</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="query">Your Query <span class="optional-label">(optional)</span></label>
+                <textarea id="query" name="entry.1160932882" placeholder="Please share any specific requirements, questions, or if you'd like us to call you back."></textarea>
+              </div>
+              <div class="consent-checkbox">
+                <input type="checkbox" id="consent" name="entry.132278656" value="Yes" required>
+                <label for="consent">By submitting this, I agree to receive communication from Saum</label>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn">Submit</button>
+              </div>
+              <div class="success-message" id="success-message">
+                <p>Thank you for reaching out! Your message has been received, and we will contact you shortly.</p>
+              </div>
+            </form>
+          </div>
+       <!-- REMOVED FORM CREATED BY CURSOR 
+        <p>Have questions about our temple tours or premium products? We're here to help. Fill out the form below, and we'll get back to you within 24 hours.</p>
+      </div>
+      
+      <div class="contact-container">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="Temple Tour">Temple Tour Inquiry</option>
+              <option value="Product">Product Inquiry</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          
+          <div class="consent-checkbox">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I consent to Saum collecting and storing my data from this form.</label>
+          </div>
+          
+          <div class="form-submit">
+            <button type="submit" class="btn">Send Message</button>
+          </div>
+        </form>
+        -->
+        <div class="contact-info">
+          <h3>Our Information</h3>
+          <p>If your requirement is urgent, please do not hestitate to call or email us directly. Our information is available below.</p>
+          <div class="contact-method">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="contact-text">
+              <h4>Visit Us</h4>
+              <p>Saum Luxury Experience Centre<br>Bangalore, India</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <i class="fas fa-phone-alt"></i>
+            <div class="contact-text">
+              <h4>Call Us</h4>
+              <p>+91 98191 20245</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <div class="contact-text">
+              <h4>Email Us</h4>
+              <p>support@saum.in</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <i class="fas fa-clock"></i>
+            <div class="contact-text">
+              <h4>Operating Hours</h4>
+              <p>Tuesday - Sunday: 10:00 AM - 6:00 PM<br>Monday: By prior appointment only</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REMOVED CONTACT INFO SECTION CREATED BY CURSOR
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p>We're here to help you plan your spiritual journey or answer any questions about our products.</p>
+          
+          <div class="contact-method">
+            <i class="fas fa-phone"></i>
+            <div class="contact-text">
+              <h4>Phone</h4>
+              <p>+91 9845 123 456</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p>info@saum.in</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <i class="fas fa-clock"></i>
+            <div class="contact-text">
+              <h4>Business Hours</h4>
+              <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
+      <!-- REMOVED SUCCESS MESSAGE CREATED BY CURSOR 
+      <div class="success-message" id="successMessage">
+        <p>Thank you for reaching out! We'll get back to you within 24 hours.</p>
+      </div>
+      -->
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Saum</h3>
+          <p>At Saum, we invite you to step into a world where spiritual discovery meets curated comfort.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Temples.html">Temple Tourism</a></li>
+            <li><a href="Products.html">Premium Products</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Connect With Us</h3>
+          <p>Join our community for exclusive offers and spiritual insights.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/people/Saum/61568650954788/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/saum.india"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@saumindia"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/saumindia"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/saum-in/"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Saum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      // Hide all pages
+      document.querySelectorAll('#home, #temples, #products, #contact').forEach(page => {
+        page.classList.remove('active');
+      });
+      
+      // Show selected page
+      document.getElementById(pageId).classList.add('active');
+      
+      // Update active navigation link
+      document.querySelectorAll('nav ul li a').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Find and activate the corresponding nav link
+      document.querySelectorAll('nav ul li a').forEach(link => {
+        if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(pageId)) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+    }
+
+    // Contact form handler
+    function submitForm(event) {
+      event.preventDefault();
+      
+      // Show loading state
+      const submitBtn = document.querySelector('#contactForm button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+
+      // Get form data
+      const formData = new FormData(event.target);
+      
+      // Send data to Google Form
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSdmQdzwvApt4Zp7tUEuxuV2HZy8Bv_596oIBawcscnU6LZJjw/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+      .then(() => {
+        // Reset form
+        event.target.reset();
+        
+        // Show success message
+        const successMessage = document.getElementById('success-message');
+        successMessage.classList.add('active');
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          successMessage.classList.remove('active');
+        }, 5000);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting the form. Please try again later.');
+      })
+      .finally(() => {
+        // Reset button state
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+      });
+    }
+  </script>
+</body>
+</html> 

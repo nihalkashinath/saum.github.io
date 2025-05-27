@@ -226,66 +226,6 @@
       font-weight: bold;
     }
     
-    /* Temple Cards */
-    .temple-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .temple-card {
-      background-color: var(--white);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-    
-    .temple-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .temple-img {
-      height: 250px;
-      background-size: cover;
-      background-position: center;
-    }
-    
-    .temple-info {
-      padding: 1.5rem;
-    }
-
-    .temple-info .btn-container {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .temple-info .btn {
-      display: inline-block;
-    }
-    
-    .temple-info h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-      text-align: center;
-    }
-    
-    .temple-info p {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
-    
-    .temple-info ul {
-      list-style-position: inside;
-      margin-bottom: 1rem;
-    }
-    
-    .temple-info li {
-      margin-bottom: 0.5rem;
-    }
-    
     /* Product Cards */
     .product-cards {
       display: grid;
@@ -322,12 +262,7 @@
       margin-bottom: 0.5rem;
       font-weight: bold;
     }
-    /*
-    .product-info p {
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-    */
+    
     .product-info .price {
       font-weight: bold;
       color: var(--accent-color);
@@ -455,11 +390,11 @@
     }
     
     /* Page Specific Styles */
-    #home, #temples, #products, #contact {
+    #home, #products, #contact {
       display: none;
     }
     
-    #home.active, #temples.active, #products.active, #contact.active {
+    #home.active, #products.active, #contact.active {
       display: block;
     }
     
@@ -589,12 +524,6 @@
       order: 2;
     }
 
-    .success-message p {
-      margin: 0;
-      font-size: 1.1rem;
-      line-height: 1.5;
-    }
-
     .success-message.active {
       display: block;
       animation: fadeIn 0.5s ease-in-out;
@@ -700,13 +629,12 @@
   <header>
     <div class="container header-container">
       <a href="#" class="logo" onclick="showPage('home')"><img src="images/SaumLogo.png" alt="SAUM" style="width: 150px; height: auto;"></a>
-      <!-- <a href="#" class="logo" onclick="showPage('home')">SAUM</a>  -->   
       <nav>
         <ul>
-          <li><a href="#" class="active" onclick="showPage('home')">Home</a></li>
-          <li><a href="#" onclick="showPage('temples')">Temple Tourism</a></li>
-          <li><a href="#" onclick="showPage('products')">Premium Products</a></li>
-          <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/temples">Temple Tourism</a></li>
+          <li><a href="/products">Premium Products</a></li>
+          <li><a href="/contact">Contact Us</a></li>
         </ul>
       </nav>
     </div>
@@ -718,7 +646,7 @@
       <div class="hero-content">
         <h2>Elevated Journeys. Divine Experiences.</h2>
         <p>Step into a world where spiritual discovery meets curated comfort.</p>
-        <a href="#" class="btn" onclick="showPage('temples')">Explore Destinations</a>
+        <a href="/temples" class="btn">Explore Destinations</a>
       </div>
     </section>
 
@@ -763,7 +691,7 @@
         </div>
         
         <div style="text-align: center; margin-top: 2rem;">
-          <a href="#" class="btn" onclick="showPage('temples')">Explore Destinations</a>
+          <a href="/temples" class="btn">Explore Destinations</a>
         </div>
       </div>
     </section>
@@ -794,7 +722,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 2rem;">
-          <a href="#" class="btn" onclick="showPage('products')">Explore Products</a>
+          <a href="/products" class="btn">Explore Products</a>
         </div>
       </div>
     </section>
@@ -823,170 +751,7 @@
       </div>
     </section>
   </div>
-
-  <!-- TEMPLE TOURISM PAGE -->
-  <div id="temples">
-    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/TempleTravel4.jpg') center/cover no-repeat;">
-      <div class="hero-content">
-        <h1>Temple Tourism</h1>
-        <p>Each of our spiritual journeys is thoughtfully designed to bring you closer to the divine—without compromising on comfort or care.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Our Sacred Destinations</h2>
-          <p>Discover our current destinations below and let us take you there.</p>
-        </div>
-        
-        <div class="temple-cards">
-          <div class="temple-card">
-            <div class="temple-img" style="background-image: url('images/Kashi250.png');"></div>
-            <div class="temple-info">
-              <h3>Kashi Vishwanath</h3>
-              <p><strong>Location:</strong> Varanasi, Uttar Pradesh</p>
-              <p><strong>Main Deity:</strong> Lord Shiva (Vishwanath — Lord of the Universe)</p>
-              <p><strong>Why Visit:</strong></p>
-              <ul>
-                <li>One of the 12 Jyotirlingas, and a temple deeply intertwined with moksha (liberation)</li>
-                <li>Located near the sacred Ganga river—ideal for performing last rites and ancestral rituals</li>
-                <li>Vibrant aarti on the ghats, boat rides at dawn, and immersion in ancient spirituality</li>
-                <li>Recently renovated temple corridor enhances access and aesthetics</li>
-              </ul>
-              <p><strong>When to Visit:</strong> November to March offers the most comfortable weather and a chance to witness Ganga Mahotsav or Dev Deepawali.</p>
-              <div class="btn-container">
-                <a href="#" class="btn" onclick="showPage('contact')">Book My Kashi Yatra</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="temple-card">
-            <div class="temple-img" style="background-image: url('images/Kukke250.png');"></div>
-            <div class="temple-info">
-              <h3>Kukke Subramanya</h3>
-              <p><strong>Location:</strong> Dakshina Kannada, Karnataka</p>
-              <p><strong>Main Deity:</strong> Lord Subramanya (protector from serpent doshas)</p>
-              <p><strong>Why Visit:</strong></p>
-              <ul>
-                <li>Powerful rituals to alleviate Sarpa Dosha and ancestral afflictions</li>
-                <li>Lush green surroundings near the Kumaradhara river and Western Ghats</li>
-                <li>Ideal for spiritual seekers seeking inner cleansing and peace</li>
-                <li>Naga Prathishta and Ashlesha Bali are renowned ceremonies here</li>
-              </ul>
-              <p><strong>When to Visit:</strong> August to February is ideal—especially during Shasti and Ashlesha Nakshatra days.</p>
-              <div class="btn-container">
-                <a href="#" class="btn" onclick="showPage('contact')">Book My Kukke Pilgrimage</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="temple-card">
-            <div class="temple-img" style="background-image: url('images/Tirupati250.jpg');"></div>
-            <div class="temple-info">
-              <h3>Tirupati</h3>
-              <p><strong>Location:</strong> Tirumala, Andhra Pradesh</p>
-              <p><strong>Main Deity:</strong> Lord Venkateswara (a form of Vishnu)</p>
-              <p><strong>Why Visit:</strong></p>
-              <ul>
-                <li>One of the richest and most visited temples in the world</li>
-                <li>Believed to fulfill sincere wishes and bring prosperity</li>
-                <li>Home to the famous Laddu prasadam and unique rituals like tonsuring (hair offering)</li>
-                <li>Divine energy and breathtaking architecture atop the Tirumala hills</li>
-              </ul>
-              <p><strong>When to Visit:</strong> Best experienced during early winter (Oct-Jan) for pleasant weather and fewer crowds on weekdays.</p>
-              <div class="btn-container">
-                <a href="#" class="btn" onclick="showPage('contact')">Book My Tirupati Darshan</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 3rem; background-color: var(--secondary-color); padding: 2rem; border-radius: 8px;">
-          <h3>Have a temple in mind that's not listed?</h3>
-          <a href="#" class="btn" onclick="showPage('contact')">Contact Us for Custom Pilgrimages</a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- PREMIUM PRODUCTS PAGE -->
-  <div id="products">
-    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/PremiumProducts.webp') center/cover no-repeat;">
-      <div class="hero-content">
-        <h1>Incense Sticks and Products</h1>
-        <p>At Saum, we believe in the transformative power of fragrance.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p>Our carefully curated incense products are designed to evoke positive emotions, promote relaxation, and inspire a sense of well-being. Each of our three unique fragrances is crafted using natural ingredients, ensuring a pure and refreshing experience that is both subtle and impactful.</p>
-          <p>Embrace the tranquility and fulfillment that Saum offers, and discover the serenity within.</p>
-        </div>
-        
-        <div class="product-cards">
-          <div class="product-card">
-            <div class="product-img" style="background-image: url('images/Loban100.jpg');"></div>
-            <div class="product-info">
-              <h3>Loban</h3>
-              <p>Resin-rich aroma that purifies your space and uplifts the soul.</p>
-              <p>Available in: 100 g | 200 g</p>
-              <p class="price">Price: ₹300 onwards</p>
-              <div class="product-btns">
-                <a href="https://www.amazon.in/dp/B0F4XW84XR" target="_blank" rel="noopener noreferrer" class="btn product-btn">Buy on Amazon</a>
-                <a href="#" class="btn product-btn">Buy on Flipkart</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="product-card">
-            <div class="product-img" style="background-image: url('images/Lavender100.jpg');"></div>
-            <div class="product-info">
-              <h3>Lavender</h3>
-              <p>Floral, calming, and perfect for relaxation.</p>
-              <p>Available in: 100 g | 200 g</p>
-              <p class="price">Price: ₹300 onwards</p>
-              <div class="product-btns">
-                <a href="https://www.amazon.in/Handcrafted-Natural-Premium-Lavender-Incense/dp/B0F5PZZ2W8/" target="_blank" rel="noopener noreferrer" class="btn product-btn">Buy on Amazon</a>
-                <a href="#" class="btn product-btn">Buy on Flipkart</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="product-card">
-            <div class="product-img" style="background-image: url('images/Sandalwood100.jpg');"></div>
-            <div class="product-info">
-              <h3>Sandalwood</h3>
-              <p>Warm, sacred, ideal for meditation and daily rituals.</p>
-              <p>Available in: 100 g | 200 g</p>
-              <p class="price">Price: ₹300 onwards</p>
-              <div class="product-btns">
-                <a href="https://www.amazon.in/Handrolled-Natural-Premium-Sandalwood-Incense/dp/B0F4XTS46F" target="_blank" rel="noopener noreferrer" class="btn product-btn">Buy on Amazon</a>
-                <a href="#" class="btn product-btn">Buy on Flipkart</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="product-card">
-            <div class="product-img" style="background-image: url('images/Combo50.jpg');"></div>
-            <div class="product-info">
-              <h3>Combination Pack</h3>
-              <p>All 3 of our fragrances in a single pack.</p>
-              <p>Available in: 150 g (50 g * 3)</p>
-              <p class="price">Price: ₹300 onwards</p>
-              <div class="product-btns">
-                <a href="https://www.amazon.in/Saum-Handrolled-Premium-Incense-Sticks/dp/B0F5X29R2R" target="_blank" rel="noopener noreferrer" class="btn product-btn">Buy on Amazon</a>
-                <a href="#" class="btn product-btn">Buy on Flipkart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
+<!-- REMOVED DUPLICATED CONTACT US SECTION CODE
   <div id="contact">
     <section class="hero">
       <div class="hero-content">
@@ -997,193 +762,159 @@
     <section class="section">
       <div class="container">
         <div class="section-heading">
-          <!-- <h2>Reach Out to Saum</h2> -->
-          <p>Please share your details below and our team will call you to plan your next divine pilgrimage. You can also reach out to us if you have questions about our temple journeys, need assistance with product selection, or simply want to learn more about Saum. We're happy to help.</p> 
+          
+          <p>Have questions about our temple tours or premium products? We're here to help. Fill out the form below, and we'll get back to you within 24 hours.</p>
         </div>
+        
         <div class="contact-container">
-          <div class="contact-form">
-            <form id="contactForm" onsubmit="submitForm(event)">
-              <div class="form-group">
-                <label for="name">Name*</label>
-                <input type="text" id="name" name="entry.2050509957" required>
-              </div>
-              <div class="form-group">
-                <label for="city">City*</label>
-                <input type="text" id="city" name="entry.2014457755" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone*</label>
-                <input type="tel" id="phone" name="entry.1854073633" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email <span class="optional-label">(optional)</span></label>
-                <input type="email" id="email" name="entry.735752030">
-              </div>
-              <div class="form-group">
-                <label for="temple">Temple of Interest <span class="optional-label">(optional)</span></label>
-                <select id="temple" name="entry.415658475">
-                  <option value="">-- Select a Temple --</option>
-                  <option value="Kashi Vishwanath">Kashi Vishwanath</option>
-                  <option value="Kukke Subramanya">Kukke Subramanya</option>
-                  <option value="Tirupati">Tirupati</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="query">Your Query <span class="optional-label">(optional)</span></label>
-                <textarea id="query" name="entry.1160932882" placeholder="Please share any specific requirements, questions, or if you'd like us to call you back."></textarea>
-              </div>
-              <div class="consent-checkbox">
-                <input type="checkbox" id="consent" name="entry.132278656" value="Yes" required>
-                <label for="consent">By submitting this, I agree to receive communication from Saum</label>
-              </div>
-              <div class="form-submit">
-                <button type="submit" class="btn">Submit</button>
-              </div>
-              <div class="success-message" id="success-message">
-                <p>Thank you for reaching out! Your message has been received, and we will contact you shortly.</p>
-              </div>
-            </form>
-          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="Temple Tour">Temple Tour Inquiry</option>
+                <option value="Product">Product Inquiry</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <div class="consent-checkbox">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">I consent to Saum collecting and storing my data from this form.</label>
+            </div>
+            
+            <div class="form-submit">
+              <button type="submit" class="btn">Send Message</button>
+            </div>
+          </form>
+          
           <div class="contact-info">
-            <h3>Our Information</h3>
-            <p>If your requirement is urgent, please do not hestitate to call or email us directly. Our information is available below.</p>
+            <h3>Contact Information</h3>
+            <p>We're here to help you plan your spiritual journey or answer any questions about our products.</p>
+            
             <div class="contact-method">
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-phone"></i>
               <div class="contact-text">
-                <h4>Visit Us</h4>
-                <p>Saum Luxury Experience Centre<br>Bangalore, India</p>
+                <h4>Phone</h4>
+                <p>+91 9845 123 456</p>
               </div>
             </div>
-            <div class="contact-method">
-              <i class="fas fa-phone-alt"></i>
-              <div class="contact-text">
-                <h4>Call Us</h4>
-                <p>+91 98191 20245</p>
-              </div>
-            </div>
+            
             <div class="contact-method">
               <i class="fas fa-envelope"></i>
               <div class="contact-text">
-                <h4>Email Us</h4>
-                <p>support@saum.in</p>
+                <h4>Email</h4>
+                <p>info@saum.in</p>
               </div>
             </div>
+            
             <div class="contact-method">
               <i class="fas fa-clock"></i>
               <div class="contact-text">
-                <h4>Operating Hours</h4>
-                <p>Tuesday - Sunday: 10:00 AM - 6:00 PM<br>Monday: By prior appointment only</p>
+                <h4>Business Hours</h4>
+                <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                <p>Sunday: Closed</p>
               </div>
             </div>
           </div>
+        </div>
+        
+        <div class="success-message" id="successMessage">
+          <p>Thank you for reaching out! We'll get back to you within 24 hours.</p>
         </div>
       </div>
     </section>
   </div>
-
+  -->
+  
   <footer>
-    <div class="container footer-content">
-      <div class="footer-column">
-        <h3>About Saum</h3>
-        <p>At Saum, we invite you to step into a world where spiritual discovery meets curated comfort.</p>
-      </div>
-      <div class="footer-column">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#" onclick="showPage('home')">Home</a></li>
-          <li><a href="#" onclick="showPage('temples')">Temple Tourism</a></li>
-          <li><a href="#" onclick="showPage('products')">Premium Products</a></li>
-          <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Connect With Us</h3>
-        <p>Join our community for exclusive offers and spiritual insights.</p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/people/Saum/61568650954788/"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/saum.india"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@saumindia"><i class="fab fa-youtube"></i></a>
-          <a href="https://x.com/saumindia"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/company/saum-in/"><i class="fab fa-linkedin"></i></a>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Saum</h3>
+          <p>At Saum, we invite you to step into a world where spiritual discovery meets curated comfort.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/temples">Temple Tourism</a></li>
+            <li><a href="/products">Premium Products</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Connect With Us</h3>
+          <p>Join our community for exclusive offers and spiritual insights.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/people/Saum/61568650954788/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/saum.india"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@saumindia"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/saumindia"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/saum-in/"><i class="fab fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container">
+      
       <div class="copyright">
         <p>&copy; 2025 Saum. All rights reserved.</p>
       </div>
     </div>
   </footer>
-  
+
   <script>
     function showPage(pageId) {
       // Hide all pages
-      document.querySelectorAll('#home, #temples, #products, #contact').forEach(page => {
-        page.classList.remove('active');
-      });
+      document.getElementById('home').classList.remove('active');
+      document.getElementById('contact').classList.remove('active');
       
       // Show selected page
       document.getElementById(pageId).classList.add('active');
       
-      // Update active navigation link
-      document.querySelectorAll('nav ul li a').forEach(link => {
+      // Update navigation
+      document.querySelectorAll('nav a').forEach(link => {
         link.classList.remove('active');
       });
-      
-      // Find and activate the corresponding nav link
-      document.querySelectorAll('nav ul li a').forEach(link => {
-        if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(pageId)) {
-          link.classList.add('active');
-        }
-      });
-      
-      // Scroll to top
-      window.scrollTo(0, 0);
+      document.querySelector(`nav a[onclick="showPage('${pageId}')"]`).classList.add('active');
     }
 
-    // Contact form handler
-    function submitForm(event) {
-      event.preventDefault();
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
       
-      // Show loading state
-      const submitBtn = document.querySelector('#contactForm button[type="submit"]');
-      const originalBtnText = submitBtn.textContent;
-      submitBtn.textContent = 'Submitting...';
-      submitBtn.disabled = true;
-
-      // Get form data
-      const formData = new FormData(event.target);
+      // Show success message
+      document.getElementById('successMessage').classList.add('active');
       
-      // Send data to Google Form
-      fetch('https://docs.google.com/forms/d/e/1FAIpQLSdmQdzwvApt4Zp7tUEuxuV2HZy8Bv_596oIBawcscnU6LZJjw/formResponse', {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      })
-      .then(() => {
-        // Reset form
-        event.target.reset();
-        
-        // Show success message
-        const successMessage = document.getElementById('success-message');
-        successMessage.classList.add('active');
-        
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-          successMessage.classList.remove('active');
-        }, 5000);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error submitting the form. Please try again later.');
-      })
-      .finally(() => {
-        // Reset button state
-        submitBtn.textContent = originalBtnText;
-        submitBtn.disabled = false;
-      });
-    }
+      // Reset form
+      this.reset();
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        document.getElementById('successMessage').classList.remove('active');
+      }, 5000);
+    });
   </script>
 </body>
 </html>
