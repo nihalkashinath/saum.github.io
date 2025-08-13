@@ -42,6 +42,7 @@
       --accent-color: #8a754d;
       --light-bg: #faf7f2;
       --white: #ffffff;
+      --light-beige: #fdfbf7;
       --menu-active-color: #FF8C00;  /* Saffron/Orange color for selected menu items */
     }
     
@@ -157,6 +158,52 @@
       color: var(--menu-active-color);
     }
     
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--white);
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1001;
+      border-radius: 4px;
+      top: 100%;
+      left: 0;
+      margin-top: 0;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    .dropdown-content a {
+      color: var(--text-color);
+      padding: 0.8rem 1rem;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+    }
+    
+    .dropdown > a::after {
+      content: ' ▼';
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
+    }
+    
     /* Hero Section */
     .hero {
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/ContactUs.jpg') center/cover no-repeat;
@@ -193,7 +240,7 @@
     }
     
     .section:nth-child(even) {
-      background-color: var(--primary-color);
+      background-color: var(--light-beige);
     }
     
     .section-heading {
@@ -474,6 +521,12 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="../temples/index.html">Temple Tourism</a></li>
           <li><a href="../products/index.html">Premium Products</a></li>
+          <li class="dropdown">
+            <a href="../special-trips/index.html">Special Trips</a>
+            <div class="dropdown-content">
+              <a href="../special-trips/pandal-hopping/index.html">Pandal Hopping 2025</a>
+            </div>
+          </li>
           <li><a href="../contact/index.html" class="active">Contact Us</a></li>
         </ul>
       </nav>
@@ -517,6 +570,7 @@
                 <label for="temple">Temple of Interest <span class="optional-label">(optional)</span></label>
                 <select id="temple" name="entry.415658475">
                   <option value="">-- Select a Temple --</option>
+                  <option value="Ganpati Pandal Hopping">Ganpati Pandal Hopping</option>
                   <option value="Kashi Vishwanath">Kashi Vishwanath</option>
                   <option value="Kukke Subramanya">Kukke Subramanya</option>
                   <option value="Tirupati">Tirupati</option>
@@ -673,6 +727,7 @@
             <li><a href="../index.html">Home</a></li>
             <li><a href="../temples/index.html">Temple Tourism</a></li>
             <li><a href="../products/index.html">Premium Products</a></li>
+            <li><a href="../special-trips/index.html">Special Trips</a></li>
             <li><a href="../contact/index.html">Contact Us</a></li>
           </ul>
         </div>
