@@ -215,13 +215,14 @@
       padding: 0 2rem;
     }
     
-    .hero h1 {
-      font-size: 3.5rem;
+    .hero h2 {
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      line-height: 1.2;
       margin-bottom: 1.5rem;
     }
     
     .hero p {
-      font-size: 1.3rem;
+      font-size: clamp(1rem, 3.8vw, 1.3rem);
       margin-bottom: 2rem;
     }
     
@@ -464,9 +465,14 @@
         height: 70vh;
       }
       
-      .hero h1 {
-        font-size: 2.5rem;
+      .hero h2 {
+        font-size: clamp(1.6rem, 7vw, 2.5rem);
       }
+      /* Make top navigation horizontally scrollable on small screens */
+      nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      nav ul { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+      nav ul::-webkit-scrollbar { display: none; }
+      nav ul li { flex: 0 0 auto; }
     }
 
     /* Contact Form Styles */
@@ -675,7 +681,7 @@
 <body>
   <header>
     <div class="container header-container">
-      <a href="index.html" class="logo"><img src="images/SaumLogo.png" alt="SAUM" style="width: 150px; height: auto;"></a>
+      <a href="index.html" class="logo"><img src="images/SaumLogo.png" alt="SAUM"></a>
       <nav>
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
@@ -937,7 +943,7 @@
       </div>
     </div>
   </footer>
-
+  
   <script>
     function showPage(pageId) {
       // Hide all pages
@@ -969,6 +975,24 @@
         document.getElementById('successMessage').classList.remove('active');
       }, 5000);
     });
+  </script>
+
+  <script>
+    // Ensure hero is fully visible below the fixed header on all screen sizes
+    function adjustHeroOffset() {
+      const headerEl = document.querySelector('header');
+      const heroEl = document.querySelector('.hero');
+      if (!headerEl || !heroEl) return;
+      const headerHeight = headerEl.offsetHeight;
+      heroEl.style.marginTop = headerHeight + 'px';
+    }
+
+    window.addEventListener('load', adjustHeroOffset);
+    window.addEventListener('resize', adjustHeroOffset);
+    window.addEventListener('orientationchange', adjustHeroOffset);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(adjustHeroOffset);
+    }
   </script>
 </body>
 </html>

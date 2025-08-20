@@ -183,9 +183,9 @@
     
     .hero-content { max-width: 800px; padding: 0 2rem; }
     
-    .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
-    .hero p { font-size: 1.3rem; margin-bottom: 2rem; }
-    .hero .quote { font-style: italic; font-size: 1.1rem; margin-bottom: 2rem; }
+    .hero h2 { font-size: clamp(1.8rem, 6vw, 3rem); line-height: 1.2; margin-bottom: 1.5rem; }
+    .hero p { font-size: clamp(1rem, 3.8vw, 1.3rem); margin-bottom: 2rem; }
+    .hero .quote { font-style: italic; font-size: clamp(0.95rem, 3.2vw, 1.1rem); margin-bottom: 2rem; }
     
     /* Sections */
     .section {
@@ -277,7 +277,7 @@
     
     .inclusions {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
       margin: 2rem 0;
     }
@@ -489,6 +489,13 @@
       .hero h1 { font-size: 2.5rem; }
       .timeline-item { flex-direction: column; }
       .time { margin-bottom: 0.5rem; }
+      .package-details { padding: 1.25rem; }
+      .inclusions { grid-template-columns: 1fr; gap: 1.25rem; }
+      /* Make top navigation horizontally scrollable on small screens */
+      nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      nav ul { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+      nav ul::-webkit-scrollbar { display: none; }
+      nav ul li { flex: 0 0 auto; }
     }
   </style>
   
@@ -647,7 +654,7 @@
         <div class="timeline-item">
           <div class="time">4:30 PM</div>
           <div class="location">
-            <h4>Authentic Mumbai Flavors at Badshah Crawford 📍</h4>
+            <h4>Authentic Mumbai Flavours at Badshah Crawford 📍</h4>
             <div class="duration">Duration: 30-40 minutes (optional, at own expense)</div>
             <p>Must-try: Legendary Pav Bhaji + Royal Falooda at this iconic eatery.</p>
           </div>
@@ -696,8 +703,8 @@
           <div class="time">4:45 AM</div>
           <div class="location">
             <h4>Lalbaugcha Raja, Parel 📍</h4>
-            <div class="duration">Darshan Wait: ~1.5 hours (Mukh Darshan line)</div>
-            <p>Mumbai's most revered Ganpati, the "King of Mumbai's Ganpatis." One of the oldest pandals in the city, touted to be an icchapurti (wish-fulfilling) Ganesha. Often visited by famous personalities and devotees from across the globe. Experience the energy of a million-person queue in the divine early morning hours.</p>
+            <div class="duration">Duration: ~1.5 hours</div>
+            <p>One of the oldest pandals in the city and touted to be an icchapurti (wish-fulfilling) Ganesha, this is often revered as the “King of Mumbai's Ganpatis” and is visited by famous film stars, cricketers, politicians and devotees from across the globe.</p>
           </div>
         </div>
         
@@ -724,7 +731,7 @@
           <div class="location">
             <h4>Return to Hotel</h4>
             <div class="duration">Travel: ~30 minutes | Duration: 45 minutes</div>
-            <p>Freshen up, enjoy breakfast, and checkout while reflecting on your spiritual journey.</p>
+            <p>Freshen up, enjoy breakfast, and reflect on your spiritual journey.</p>
           </div>
         </div>
         
@@ -1138,6 +1145,22 @@
         content.classList.add('active');
         header.classList.add('active');
       }
+    }
+
+    // Ensure hero is fully visible below the fixed header on all screen sizes
+    function adjustHeroOffset() {
+      const headerEl = document.querySelector('header');
+      const heroEl = document.querySelector('.hero');
+      if (!headerEl || !heroEl) return;
+      const headerHeight = headerEl.offsetHeight;
+      heroEl.style.marginTop = headerHeight + 'px';
+    }
+
+    window.addEventListener('load', adjustHeroOffset);
+    window.addEventListener('resize', adjustHeroOffset);
+    window.addEventListener('orientationchange', adjustHeroOffset);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(adjustHeroOffset);
     }
   </script>
 </body>

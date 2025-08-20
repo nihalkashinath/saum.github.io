@@ -223,12 +223,13 @@
     }
     
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: clamp(1.6rem, 6.5vw, 2.5rem);
       margin-bottom: 1rem;
+      line-height: 1.2;
     }
     
     .hero p {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 3.6vw, 1.2rem);
       margin-bottom: 2rem;
     }
     
@@ -496,6 +497,11 @@
         margin-left: 1rem;
         margin-right: 1rem;
       }
+      /* Make top navigation horizontally scrollable on small screens */
+      nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      nav ul { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+      nav ul::-webkit-scrollbar { display: none; }
+      nav ul li { flex: 0 0 auto; }
       
       .contact-container {
         grid-template-columns: 1fr;
@@ -515,7 +521,7 @@
 <body>
   <header>
     <div class="container header-container">
-      <a href="../index.html" class="logo"><img src="../images/SaumLogo.png" alt="SAUM" style="width: 150px; height: auto;"></a>
+      <a href="../index.html" class="logo"><img src="../images/SaumLogo.png" alt="SAUM"></a>
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -818,6 +824,24 @@
         submitBtn.textContent = originalBtnText;
         submitBtn.disabled = false;
       });
+    }
+  </script>
+
+  <script>
+    // Ensure hero is fully visible below the fixed header on all screen sizes
+    function adjustHeroOffset() {
+      const headerEl = document.querySelector('header');
+      const heroEl = document.querySelector('.hero');
+      if (!headerEl || !heroEl) return;
+      const headerHeight = headerEl.offsetHeight;
+      heroEl.style.marginTop = headerHeight + 'px';
+    }
+
+    window.addEventListener('load', adjustHeroOffset);
+    window.addEventListener('resize', adjustHeroOffset);
+    window.addEventListener('orientationchange', adjustHeroOffset);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(adjustHeroOffset);
     }
   </script>
 </body>
