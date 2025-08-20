@@ -334,10 +334,41 @@
         font-size: clamp(1.6rem, 7vw, 2.5rem);
       }
       /* Make top navigation horizontally scrollable on small screens */
-      nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      nav { 
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+        padding: 0 12px; 
+        position: relative;
+      }
+      nav::before, nav::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        pointer-events: none;
+        z-index: 1;
+      }
+      nav::before {
+        left: 0;
+        background: linear-gradient(to right, var(--white) 0%, transparent 100%);
+      }
+      nav::after {
+        right: 0;
+        background: linear-gradient(to left, var(--white) 0%, transparent 100%);
+      }
       nav ul { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
       nav ul::-webkit-scrollbar { display: none; }
-      nav ul li { flex: 0 0 auto; }
+      nav ul li { 
+        flex: 0 0 auto; 
+        margin-right: 8px;
+      }
+      nav ul li:last-child { margin-right: 0; }
+      /* Show partial preview of next/previous items */
+      nav ul { 
+        padding: 0 8px; 
+        margin: 0 -8px;
+      }
     }
 
     .temple-btn {
