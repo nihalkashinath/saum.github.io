@@ -171,6 +171,10 @@
     
     /* Mobile dropdown overrides */
     @media (max-width: 768px) {
+      .dropdown:hover .dropdown-content {
+        display: none; /* Disable hover on mobile */
+      }
+      
       .dropdown-content {
         position: static;
         box-shadow: none;
