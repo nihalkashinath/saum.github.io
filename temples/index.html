@@ -682,7 +682,41 @@
       });
     }
 
+    // Auto-scroll navigation to show current page's menu item prominently
+    function scrollToCurrentMenuItem() {
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      if (!isMobile) return;
+      
+      const nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Find the current page's menu item (Temple Tourism page)
+      let currentMenuItem = null;
+      const templeMenuItem = nav.querySelector('ul li a[href="index.html"]');
+      if (templeMenuItem) {
+        currentMenuItem = templeMenuItem;
+      }
+      
+      if (currentMenuItem) {
+        // Calculate scroll position to center the current item
+        const navWidth = nav.offsetWidth;
+        const itemLeft = currentMenuItem.offsetLeft;
+        const itemWidth = currentMenuItem.offsetWidth;
+        const scrollLeft = itemLeft - (navWidth / 2) + (itemWidth / 2);
+        
+        // Smooth scroll to the calculated position
+        nav.scrollTo({
+          left: Math.max(0, scrollLeft),
+          behavior: 'smooth'
+        });
+      }
+    }
+
     setupMobileDropdowns();
+    
+    // Scroll to current menu item on page load and resize
+    window.addEventListener('load', scrollToCurrentMenuItem);
+    window.addEventListener('resize', scrollToCurrentMenuItem);
   </script>
 </body>
 </html> 
