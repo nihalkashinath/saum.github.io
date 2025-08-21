@@ -169,6 +169,21 @@
       margin-left: 0.3rem;
     }
     
+    /* Mobile dropdown overrides */
+    @media (max-width: 768px) {
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border: 1px solid var(--secondary-color);
+        margin-top: 0.5rem;
+        border-radius: 4px;
+      }
+      
+      .dropdown-content.show {
+        display: block !important;
+      }
+    }
+    
     /* Hero */
     .hero {
       background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../../images/GaneshPandalHopping.jpg') center/cover no-repeat;
@@ -885,7 +900,7 @@
               <li>Traditional Indian clothing recommended (kurta-pyjama/shirt-pant for men, kurta/salwar-kameez/saree for women)</li>
               <li>Comfortable slip-on shoes for easy walking as well as wearing and removal</li>
               <li>Light cotton fabrics suitable for Mumbai's warm, humid weather</li>
-              <li>Modest clothing respecting temple and pandal sentiments. Entry may not be restricted otherwise</li>
+              <li>Modest clothing respecting temple and pandal sentiments. Entry may be restricted otherwise</li>
             </ul>
           </div>
         </div>
@@ -897,7 +912,6 @@
           <div class="accordion-content">
             <ul>
               <li>Small bag for personal offerings and essentials</li>
-              <li>Water bottle to stay hydrated during long darshans</li>
               <li>Handkerchief/small towel for the humid Mumbai climate</li>
               <li>Cap and sunglasses for comfort under the sun</li>
               <li>Umbrella for protection from rain and drizzle</li>
@@ -1198,26 +1212,43 @@
     function setupMobileDropdowns() {
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
       const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
+      
       dropdownLinks.forEach(link => {
         link.addEventListener('click', function (e) {
           const menu = this.parentElement.querySelector('.dropdown-content');
           if (!menu) return;
+          
           if (isMobile) {
             e.preventDefault();
-            const isOpen = menu.style.display === 'block';
-            document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.style.display = 'none');
-            menu.style.display = isOpen ? 'none' : 'block';
+            e.stopPropagation();
+            
+            // Close all other dropdowns
+            document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+              dc.classList.remove('show');
+            });
+            
+            // Toggle current dropdown
+            menu.classList.toggle('show');
           }
         });
       });
+      
+      // Close dropdowns when clicking outside
       document.addEventListener('click', (ev) => {
         if (!ev.target.closest('nav .dropdown')) {
-          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.style.display = 'none');
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
         }
       });
+      
+      // Handle window resize
       window.addEventListener('resize', () => {
         if (!window.matchMedia('(max-width: 768px)').matches) {
-          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.style.display = '');
+          // On larger screens, remove mobile classes
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
         }
       });
     }

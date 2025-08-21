@@ -199,6 +199,21 @@
       margin-left: 0.3rem;
     }
     
+    /* Mobile dropdown overrides */
+    @media (max-width: 768px) {
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border: 1px solid var(--secondary-color);
+        margin-top: 0.5rem;
+        border-radius: 4px;
+      }
+      
+      .dropdown-content.show {
+        display: block !important;
+      }
+    }
+    
     /* Hero Section */
     .hero {
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/TempleTravel4.jpg') center/cover no-repeat;
@@ -614,6 +629,53 @@
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(adjustHeroOffset);
     }
+
+    // Enable dropdown open on tap for small screens
+    function setupMobileDropdowns() {
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
+      
+      dropdownLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          const menu = this.parentElement.querySelector('.dropdown-content');
+          if (!menu) return;
+          
+          if (isMobile) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close all other dropdowns
+            document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+              dc.classList.remove('show');
+            });
+            
+            // Toggle current dropdown
+            menu.classList.toggle('show');
+          }
+        });
+      });
+      
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', (ev) => {
+        if (!ev.target.closest('nav .dropdown')) {
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
+        }
+      });
+      
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 768px)').matches) {
+          // On larger screens, remove mobile classes
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
+        }
+      });
+    }
+
+    setupMobileDropdowns();
   </script>
 </body>
 </html> 
