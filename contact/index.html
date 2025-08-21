@@ -901,6 +901,13 @@
           if (!menu) return;
           
           if (isMobile) {
+            const isOpen = menu.classList.contains('show');
+            if (isOpen) {
+              // Submenu already open → allow navigation on second tap
+              return;
+            }
+            
+            // First tap on mobile → open submenu instead of navigating
             e.preventDefault();
             e.stopPropagation();
             
@@ -909,8 +916,8 @@
               dc.classList.remove('show');
             });
             
-            // Toggle current dropdown
-            menu.classList.toggle('show');
+            // Open current dropdown
+            menu.classList.add('show');
           }
         });
       });

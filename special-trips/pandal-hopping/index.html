@@ -675,7 +675,7 @@
           <div class="location">
             <h4>Chandanwadi Ganpati 📍</h4>
             <div class="duration">Travel: 10 minutes | Duration: 15 minutes</div>
-            <p>Tucked into a quiet inner lane, this pandal is cherished for its devotion-focused decor and brilliant depiction of Ganpati with traditional aesthetics.</p>
+            <p>Tucked into a quiet inner lane, this pandal is cherished for its devotion-focused decor. Known for its light-and-sound shows with strong social messages, it offers a soulful darshan of Ganpati in an intimate setting.</p>
           </div>
         </div>
         
@@ -729,7 +729,7 @@
           <div class="location">
             <h4>Siddhivinayak Temple 📍</h4>
             <div class="duration">Travel: 25-30 minutes | Darshan: 30 minutes</div>
-            <p>Experience this legendary temple (founded in 1801), one of India's most iconic Ganesha shrines. Known for its gold-plated sanctum and the belief that Lord Ganesha grants devotees' deepest wishes. The night visit provides a unique darshan of the closing ceremony puja.</p>
+            <p>Experience this legendary temple (founded in 1801), one of India's most iconic Ganesha shrines. Known for its gold-plated sanctum and the belief that Lord Ganesha, with the trunk on the right side, grants devotees' deepest wishes. The night visit provides a unique darshan of the closing ceremony puja.</p>
           </div>
         </div>
       </div>
@@ -1219,6 +1219,13 @@
           if (!menu) return;
           
           if (isMobile) {
+            const isOpen = menu.classList.contains('show');
+            if (isOpen) {
+              // Submenu already open → allow navigation on second tap
+              return;
+            }
+            
+            // First tap on mobile → open submenu instead of navigating
             e.preventDefault();
             e.stopPropagation();
             
@@ -1227,8 +1234,8 @@
               dc.classList.remove('show');
             });
             
-            // Toggle current dropdown
-            menu.classList.toggle('show');
+            // Open current dropdown
+            menu.classList.add('show');
           }
         });
       });
