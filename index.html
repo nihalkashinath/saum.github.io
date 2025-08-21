@@ -509,11 +509,9 @@
       }
       nav ul { 
         flex-wrap: nowrap; 
-        overflow-x: auto; 
         scrollbar-width: none; 
         padding: 0 8px; 
         margin: 0 -8px;
-        /* Ensure proper centering */
         display: flex;
         align-items: center;
         min-width: max-content;
@@ -1098,78 +1096,7 @@
       });
     }
 
-    // Auto-scroll navigation to show current page's menu item prominently
-    function scrollToCurrentMenuItem() {
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      if (!isMobile) return;
-      
-      // Wait a bit for layout to complete
-      setTimeout(() => {
-        const nav = document.querySelector('nav');
-        if (!nav) return;
-        
-        // Find the current page's menu item dynamically
-        let currentMenuItem = null;
-        const currentPath = window.location.pathname;
-        
-        // Map current path to menu items
-        if (currentPath === '/' || currentPath.endsWith('index.html')) {
-          // Home page
-          currentMenuItem = nav.querySelector('ul li a[href="index.html"]');
-        } else if (currentPath.includes('/temples/')) {
-          // Temple Tourism page
-          currentMenuItem = nav.querySelector('ul li a[href="temples/index.html"]');
-        } else if (currentPath.includes('/products/')) {
-          // Premium Products page
-          currentMenuItem = nav.querySelector('ul li a[href="products/index.html"]');
-        } else if (currentPath.includes('/special-trips/')) {
-          // Special Trips page
-          currentMenuItem = nav.querySelector('ul li a[href="special-trips/index.html"]');
-        } else if (currentPath.includes('/contact/')) {
-          // Contact Us page
-          currentMenuItem = nav.querySelector('ul li a[href="contact/index.html"]');
-        }
-        
-        if (currentMenuItem) {
-          // Get the navigation list element for scrolling
-          const navList = nav.querySelector('ul');
-          if (!navList) return;
-          
-          // Calculate scroll position to center the current item
-          const navWidth = nav.offsetWidth;
-          const itemLeft = currentMenuItem.offsetLeft;
-          const itemWidth = currentMenuItem.offsetWidth;
-          const scrollLeft = itemLeft - (navWidth / 2) + (itemWidth / 2);
-          
-          // Ensure we don't scroll past the beginning or end
-          const maxScrollLeft = navList.scrollWidth - navWidth;
-          const finalScrollLeft = Math.max(0, Math.min(scrollLeft, maxScrollLeft));
-          
-          // Smooth scroll to the calculated position on the nav list
-          navList.scrollTo({
-            left: finalScrollLeft,
-            behavior: 'smooth'
-          });
-          
-          // Debug logging
-          console.log('Scrolling to menu item:', {
-            currentPath,
-            itemLeft,
-            itemWidth,
-            navWidth,
-            scrollLeft,
-            finalScrollLeft,
-            navListScrollWidth: navList.scrollWidth
-          });
-        }
-      }, 100);
-    }
-
     setupMobileDropdowns();
-    
-    // Scroll to current menu item on page load and resize
-    window.addEventListener('load', scrollToCurrentMenuItem);
-    window.addEventListener('resize', scrollToCurrentMenuItem);
   </script>
 </body>
 </html>
