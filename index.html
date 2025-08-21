@@ -483,45 +483,16 @@
       .hero h2 {
         font-size: clamp(1.6rem, 7vw, 2.5rem);
       }
-      /* Make top navigation horizontally scrollable on small screens */
-      nav { 
-        overflow-x: auto; 
-        -webkit-overflow-scrolling: touch; 
-        padding: 0 12px; 
-        position: relative;
+      /* Simple mobile navigation */
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
       }
-      nav::before, nav::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 20px;
-        pointer-events: none;
-        z-index: 1;
+      
+      nav ul li {
+        margin: 0;
       }
-      nav::before {
-        left: 0;
-        background: linear-gradient(to right, var(--white) 0%, transparent 100%);
-      }
-      nav::after {
-        right: 0;
-        background: linear-gradient(to left, var(--white) 0%, transparent 100%);
-      }
-      nav ul { 
-        flex-wrap: nowrap; 
-        scrollbar-width: none; 
-        padding: 0 8px; 
-        margin: 0 -8px;
-        display: flex;
-        align-items: center;
-        min-width: max-content;
-      }
-      nav ul::-webkit-scrollbar { display: none; }
-      nav ul li { 
-        flex: 0 0 auto; 
-        margin-right: 8px;
-      }
-      nav ul li:last-child { margin-right: 0; }
     }
 
     /* Contact Form Styles */
@@ -1043,9 +1014,8 @@
       document.fonts.ready.then(adjustHeroOffset);
     }
 
-    // Enable dropdown open on tap for small screens
-    function setupMobileDropdowns() {
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    // Simple dropdown functionality
+    function setupDropdowns() {
       const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
       
       dropdownLinks.forEach(link => {
@@ -1053,26 +1023,24 @@
           const menu = this.parentElement.querySelector('.dropdown-content');
           if (!menu) return;
           
-          if (isMobile) {
-            const isOpen = menu.classList.contains('show');
-            if (isOpen) {
-              // Submenu already open → close it and allow navigation
-              menu.classList.remove('show');
-              return; // Allow the default navigation to proceed
-            }
-            
-            // First tap on mobile → open submenu instead of navigating
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Close all other dropdowns
-            document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
-              dc.classList.remove('show');
-            });
-            
-            // Open current dropdown
-            menu.classList.add('show');
+          const isOpen = menu.classList.contains('show');
+          if (isOpen) {
+            // Submenu already open → close it and allow navigation
+            menu.classList.remove('show');
+            return; // Allow the default navigation to proceed
           }
+          
+          // First click → open submenu instead of navigating
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Close all other dropdowns
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
+          
+          // Open current dropdown
+          menu.classList.add('show');
         });
       });
       
@@ -1084,19 +1052,9 @@
           });
         }
       });
-      
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        if (!window.matchMedia('(max-width: 768px)').matches) {
-          // On larger screens, remove mobile classes
-          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
-            dc.classList.remove('show');
-          });
-        }
-      });
     }
 
-    setupMobileDropdowns();
+    setupDropdowns();
   </script>
 </body>
 </html>

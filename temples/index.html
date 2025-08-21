@@ -348,47 +348,16 @@
       .hero h2 {
         font-size: clamp(1.6rem, 7vw, 2.5rem);
       }
-      /* Make top navigation horizontally scrollable on small screens */
-      nav { 
-        overflow-x: auto; 
-        -webkit-overflow-scrolling: touch; 
-        padding: 0 12px; 
-        position: relative;
+      /* Simple mobile navigation */
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
       }
-      nav::before, nav::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 20px;
-        pointer-events: none;
-        z-index: 1;
+      
+      nav ul li {
+        margin: 0;
       }
-      nav::before {
-        left: 0;
-        background: linear-gradient(to right, var(--white) 0%, transparent 100%);
-      }
-      nav::after {
-        right: 0;
-        background: linear-gradient(to left, var(--white) 0%, transparent 100%);
-      }
-      nav ul { 
-        flex-wrap: nowrap; 
-        overflow-x: auto; 
-        scrollbar-width: none; 
-        padding: 0 8px; 
-        margin: 0 -8px;
-        /* Ensure proper centering */
-        display: flex;
-        align-items: center;
-        min-width: max-content;
-      }
-      nav ul::-webkit-scrollbar { display: none; }
-      nav ul li { 
-        flex: 0 0 auto; 
-        margin-right: 8px;
-      }
-      nav ul li:last-child { margin-right: 0; }
     }
 
     .temple-btn {
@@ -635,9 +604,8 @@
       document.fonts.ready.then(adjustHeroOffset);
     }
 
-    // Enable dropdown open on tap for small screens
-    function setupMobileDropdowns() {
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    // Simple dropdown functionality
+    function setupDropdowns() {
       const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
       
       dropdownLinks.forEach(link => {
@@ -645,25 +613,24 @@
           const menu = this.parentElement.querySelector('.dropdown-content');
           if (!menu) return;
           
-          if (isMobile) {
-            const isOpen = menu.classList.contains('show');
-            if (isOpen) {
-              // Submenu already open → allow navigation on second tap
-              return;
-            }
-            
-            // First tap on mobile → open submenu instead of navigating
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Close all other dropdowns
-            document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
-              dc.classList.remove('show');
-            });
-            
-            // Open current dropdown
-            menu.classList.add('show');
+          const isOpen = menu.classList.contains('show');
+          if (isOpen) {
+            // Submenu already open → close it and allow navigation
+            menu.classList.remove('show');
+            return; // Allow the default navigation to proceed
           }
+          
+          // First click → open submenu instead of navigating
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Close all other dropdowns
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
+          
+          // Open current dropdown
+          menu.classList.add('show');
         });
       });
       
@@ -675,66 +642,9 @@
           });
         }
       });
-      
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        if (!window.matchMedia('(max-width: 768px)').matches) {
-          // On larger screens, remove mobile classes
-          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
-            dc.classList.remove('show');
-          });
-        }
-      });
     }
 
-    // Auto-scroll navigation to show current page's menu item prominently
-    function scrollToCurrentMenuItem() {
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      if (!isMobile) return;
-      
-      const nav = document.querySelector('nav');
-      if (!nav) return;
-      
-      // Wait a bit for layout to complete
-      setTimeout(() => {
-        // Find the current page's menu item (Temple Tourism page)
-        let currentMenuItem = null;
-        const templeMenuItem = nav.querySelector('ul li a[href="index.html"]');
-        if (templeMenuItem) {
-          currentMenuItem = templeMenuItem;
-        }
-        
-        if (currentMenuItem) {
-          // Get the navigation container and list
-          const navList = nav.querySelector('ul');
-          if (!navList) return;
-          
-          // Calculate scroll position to center the current item
-          const navWidth = nav.offsetWidth;
-          const itemLeft = currentMenuItem.offsetLeft;
-          const itemWidth = currentMenuItem.offsetWidth;
-          
-          // Center the item in the visible area
-          const scrollLeft = itemLeft - (navWidth / 2) + (itemWidth / 2);
-          
-          // Ensure we don't scroll past the beginning or end
-          const maxScrollLeft = navList.scrollWidth - navWidth;
-          const finalScrollLeft = Math.max(0, Math.min(scrollLeft, maxScrollLeft));
-          
-          // Smooth scroll to the calculated position
-          nav.scrollTo({
-            left: finalScrollLeft,
-            behavior: 'smooth'
-          });
-        }
-      }, 100);
-    }
-
-    setupMobileDropdowns();
-    
-    // Scroll to current menu item on page load and resize
-    window.addEventListener('load', scrollToCurrentMenuItem);
-    window.addEventListener('resize', scrollToCurrentMenuItem);
+    setupDropdowns();
   </script>
 </body>
 </html> 
