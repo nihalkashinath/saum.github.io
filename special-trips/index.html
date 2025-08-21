@@ -543,30 +543,44 @@
         const menu = this.parentElement.querySelector('.dropdown-content');
         if (!menu) return;
         
-        const isOpen = menu.classList.contains('show');
-        if (isOpen) {
-          // Submenu already open → close it and allow navigation
-          menu.classList.remove('show');
-          return; // Allow the default navigation to proceed
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        
+        if (isMobile) {
+          const isOpen = menu.classList.contains('show');
+          if (isOpen) {
+            // Submenu already open → close it and allow navigation
+            menu.classList.remove('show');
+            return; // Allow the default navigation to proceed
+          }
+          
+          // First click → open submenu instead of navigating
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Close all other dropdowns
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
+          
+          // Open current dropdown
+          menu.classList.add('show');
         }
-        
-        // First click → open submenu instead of navigating
-        e.preventDefault();
-        e.stopPropagation();
-        
-        // Close all other dropdowns
-        document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
-          dc.classList.remove('show');
-        });
-        
-        // Open current dropdown
-        menu.classList.add('show');
       });
     });
     
     // Close dropdowns when clicking outside
     document.addEventListener('click', (ev) => {
       if (!ev.target.closest('nav .dropdown')) {
+        document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+          dc.classList.remove('show');
+        });
+      }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (!window.matchMedia('(max-width: 768px)').matches) {
+        // On larger screens, remove mobile classes
         document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
           dc.classList.remove('show');
         });
