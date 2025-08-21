@@ -14,25 +14,32 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saum - Ganpati Pandal Hopping in Mumbai Aug 30-31</title>
-  <meta name="description" content="Experience the divine energy of Mumbai's most revered Ganpati pandals in an expertly curated 2-day spiritual journey">
+  <title>Saum - Special Trips</title>
+  <meta name="description" content="Curated Special Spiritual Journeys and Unique Religious Experiences">
   
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Saum - Pandal Hopping - Ganesh Chaturthi Special Journey">
-  <meta property="og:description" content="Experience the divine energy of Mumbai's most revered Ganpati pandals in an expertly curated 2-day spiritual journey">
-  <meta property="og:image" content="https://www.saum.in/images/GaneshPandalHopping.jpg">
-  <meta property="og:url" content="https://www.saum.in/special-trips/pandal-hopping/">
+  <!-- Open Graph Meta Tags (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:title" content="Saum - Special Trips">
+  <meta property="og:description" content="Curated Special Spiritual Journeys and Unique Religious Experiences">
+  <meta property="og:image" content="https://www.saum.in/images/TirupatiPreview.jpg">
+  <meta property="og:url" content="https://www.saum.in/special-trips/">
   <meta property="og:type" content="website">
   
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saum - Special Trips">
+  <meta name="twitter:description" content="Curated Special Spiritual Journeys and Unique Religious Experiences">
+  <meta name="twitter:image" content="https://www.saum.in/images/TirupatiPreview.jpg">
+  
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../../images/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg" />
-  <link rel="shortcut icon" href="../../images/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+  <link rel="shortcut icon" href="../images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Saum" />
-  <link rel="manifest" href="../../images/site.webmanifest" />
+  <link rel="manifest" href="../images/site.webmanifest" />
   
   <style>
+    /* Global Styles */
     :root {
       --primary-color: #c9b18c;
       --secondary-color: #f5f0e6;
@@ -41,7 +48,7 @@
       --light-bg: #faf7f2;
       --white: #ffffff;
       --light-beige: #fdfbf7;
-      --menu-active-color: #FF8C00;
+      --menu-active-color: #FF8C00;  /* Saffron/Orange color for selected menu items */
     }
     
     * {
@@ -58,17 +65,27 @@
       min-height: 100vh;
     }
     
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
       font-weight: 300;
       letter-spacing: 1px;
       margin-bottom: 1rem;
     }
     
-    h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-    h2 { font-size: 2rem; margin-top: 2rem; margin-bottom: 1rem; }
-    h3 { font-size: 1.5rem; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
     
-    p { margin-bottom: 1.2rem; font-size: 1.1rem; }
+    h2 {
+      font-size: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
     
     .container {
       max-width: 1200px;
@@ -97,7 +114,7 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     
-    /* Header */
+    /* Header Styles */
     header {
       background-color: var(--white);
       padding: 1.5rem 0;
@@ -114,14 +131,27 @@
       align-items: center;
     }
     
-    .logo img { width: 130px; height: auto; }
+    .logo {
+      font-size: 2rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+    
+    .logo img {
+      width: 130px;
+      height: auto;
+    }
     
     nav ul {
       display: flex;
       list-style: none;
     }
     
-    nav ul li { margin-left: 2rem; }
+    nav ul li {
+      margin-left: 2rem;
+    }
     
     nav ul li a {
       text-decoration: none;
@@ -199,9 +229,9 @@
       }
     }
     
-    /* Hero */
+    /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../../images/GaneshPandalHopping.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/mount_kailash.jpg') center/cover no-repeat;
       height: 90vh;
       display: flex;
       align-items: center;
@@ -211,231 +241,43 @@
       margin-top: 5rem;
     }
     
-    .hero-content { max-width: 800px; padding: 0 2rem; }
+    .hero-content {
+      max-width: 800px;
+      padding: 0 2rem;
+    }
     
-    .hero h2 { font-size: clamp(1.8rem, 6vw, 3rem); line-height: 1.2; margin-bottom: 1.5rem; }
-    .hero p { font-size: clamp(1rem, 3.8vw, 1.3rem); margin-bottom: 2rem; }
-    .hero .quote { font-style: italic; font-size: clamp(0.95rem, 3.2vw, 1.1rem); margin-bottom: 2rem; }
+    .hero h2 {
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
     
-    /* Sections */
+    .hero p {
+      font-size: clamp(1rem, 3.8vw, 1.3rem);
+      margin-bottom: 2rem;
+    }
+    
+    /* Section Styles */
     .section {
       padding: 5rem 0;
       background-color: var(--secondary-color);
     }
     
-    .section:nth-child(even) { background-color: var(--light-beige); }
+    .section:nth-child(even) {
+      background-color: var(--light-beige);
+    }
     
-    .section-heading { text-align: center; margin-bottom: 3rem; }
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
     
-    /* Features Grid */
-    .features {
+    /* Trip Cards */
+    .trip-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
-    }
-    
-    .feature {
-      text-align: center;
-      padding: 2rem;
-      background-color: var(--white);
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-    
-    .feature:hover { transform: translateY(-5px); }
-    
-    .feature i {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-    }
-    
-    /* Itinerary */
-    .itinerary-day {
-      background-color: var(--white);
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    
-    .itinerary-day h3 {
-      color: var(--primary-color);
-      border-bottom: 2px solid var(--primary-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .timeline-item {
-      display: flex;
-      margin-bottom: 1.5rem;
-      align-items: flex-start;
-    }
-    
-    .time {
-      min-width: 100px;
-      font-weight: bold;
-      color: var(--accent-color);
-      margin-right: 1rem;
-    }
-    
-    .location {
-      flex: 1;
-      background-color: var(--light-bg);
-      padding: 1rem;
-      border-radius: 6px;
-      border-left: 4px solid var(--primary-color);
-    }
-    
-    .location h4 { margin-bottom: 0.5rem; }
-    
-    .location .duration {
-      font-size: 0.9rem;
-      color: var(--accent-color);
-      margin-bottom: 0.5rem;
-    }
-    
-    /* Package Details */
-    .package-details {
-      background-color: var(--white);
-      border-radius: 8px;
-      padding: 2rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    
-    .inclusions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    
-    .inclusion-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 2rem 1.5rem;
-      background-color: var(--light-bg);
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-    
-    .inclusion-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    
-    .inclusion-item i {
-      color: var(--primary-color);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    
-    .inclusion-item div {
-      width: 100%;
-    }
-    
-    .inclusion-item h4 {
-      color: var(--accent-color);
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-    
-    .inclusion-item p {
-      margin-bottom: 0.5rem;
-      line-height: 1.6;
-      color: var(--text-color);
-    }
-    
-    .inclusion-item p:last-child {
-      margin-bottom: 0;
-    }
-    
-    /* Accordion */
-    .accordion {
-      margin: 2rem 0;
-    }
-    
-    .accordion-item {
-      background-color: var(--white);
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .accordion-header {
-      background-color: var(--light-bg);
-      padding: 1rem;
-      cursor: pointer;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .accordion-header:hover {
-      background-color: var(--secondary-color);
-    }
-    
-    .accordion-header::after {
-      content: '▼';
-      font-size: 0.8rem;
-      color: var(--primary-color);
-      transition: transform 0.3s ease;
-    }
-    
-    .accordion-header.active::after {
-      content: '▲';
-      transform: rotate(0deg);
-    }
-    
-    .accordion-content {
-      padding: 1rem;
-      display: none;
-    }
-    
-    .accordion-content.active {
-      display: block;
-    }
-    
-    .accordion-content ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    
-    .accordion-content li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--secondary-color);
-    }
-    
-    .accordion-content li:last-child {
-      border-bottom: none;
-    }
-    
-    /* FAQ */
-    .faq-item {
-      background-color: var(--white);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .faq-question {
-      font-weight: 600;
-      color: var(--accent-color);
-      margin-bottom: 0.8rem;
-    }
-    
-    .faq-answer {
-      color: var(--text-color);
     }
     
     /* Footer */
@@ -510,17 +352,68 @@
       border-top: 1px solid rgba(255,255,255,0.1);
     }
     
+    .trip-card {
+      background-color: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    
+    .trip-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .trip-img {
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .trip-info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .trip-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    
+    .trip-info .duration {
+      font-weight: bold;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+    
+    .trip-info .description {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
     /* Responsive */
     @media (max-width: 768px) {
-      .header-container { flex-direction: column; }
-      nav ul { margin-top: 1rem; }
-      nav ul li { margin-left: 1rem; margin-right: 1rem; }
-      .hero { height: 70vh; }
-      .hero h1 { font-size: 2.5rem; }
-      .timeline-item { flex-direction: column; }
-      .time { margin-bottom: 0.5rem; }
-      .package-details { padding: 1.25rem; }
-      .inclusions { grid-template-columns: 1fr; gap: 1.25rem; }
+      .header-container {
+        flex-direction: column;
+      }
+      
+      nav ul {
+        margin-top: 1rem;
+      }
+      
+      nav ul li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      
+      .hero {
+        height: 60vh;
+      }
+      
+      .hero h2 {
+        font-size: clamp(1.6rem, 7vw, 2.5rem);
+      }
       /* Simple mobile navigation */
       nav ul {
         flex-wrap: wrap;
@@ -531,10 +424,13 @@
       nav ul li {
         margin: 0;
       }
+      .trip-cards {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
   
-  <!-- Font Awesome -->
+  <!-- Font Awesome for icons -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
   
   <!-- Google Fonts -->
@@ -543,19 +439,19 @@
 <body>
   <header>
     <div class="container header-container">
-      <a href="../../index.html" class="logo"><img src="../../images/SaumLogo.png" alt="SAUM"></a>
+      <a href="../index.html" class="logo"><img src="../images/SaumLogo.png" alt="SAUM"></a>
       <nav>
         <ul>
-          <li><a href="../../index.html">Home</a></li>
-          <li><a href="../../temples/index.html">Temple Tourism</a></li>
-          <li><a href="../../products/index.html">Premium Products</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../temples/index.html">Temple Tourism</a></li>
+          <li><a href="../products/index.html">Premium Products</a></li>
           <li class="dropdown">
-            <a href="../index.html" class="active">Special Trips</a>
+            <a href="index.html" class="active">Special Trips</a>
             <div class="dropdown-content">
-              <a href="index.html">Pandal Hopping 2025</a>
+              <a href="pandal-hopping/index.html">Pandal Hopping 2025</a>
             </div>
           </li>
-          <li><a href="../../contact/index.html">Contact Us</a></li>
+          <li><a href="../contact/index.html">Contact Us</a></li>
         </ul>
       </nav>
     </div>
@@ -563,562 +459,38 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h2>Mumbai Ganpati Darshan and Pandal Hopping <br> Aug 30-31, 2025</h2>
-      <p>Experience the divine energy of Mumbai's most revered Ganpati pandals</p>
+      <h2>Special Spiritual Journeys</h2>
+      <p>Unique and curated experiences that go beyond traditional temple tourism</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="section-heading">
-        <h2>A Limited-Time Sacred Journey, with Bappa's Blessings</h2>
+        <h2>Extraordinary Spiritual Experiences</h2>
+        <p>From Mount Kailash to Mahakumbh and Rath Yatra to Ramayan Trails, discover specially curated journeys that combine deep spiritual significance with unique cultural experiences. These go beyond temple visits - they are transformative spiritual adventures!</p>
       </div>
       
-      <div style="text-align: center; margin-bottom: 3rem;">
-        <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">In this expertly curated 2-day spiritual journey, visit the most sacred, historied and popular pandals in Mumbai - from the legendary Lalbaugcha Raja to the golden splendour of GSB Seva Mandal. And complete your trip with a visit to the revered Siddhivinayak Temple.</p>
-        <a href="../../contact/index.html" class="btn">Contact Us to Book Your Trip</a>             
-        <p style="font-size: 1.1rem; margin-bottom: 2rem;"><strong>*Limited to 20 devotees on first-come-first-served basis only.</strong></p>        
-      </div>
-      
-      <div class="features">
-        <div class="feature">
-          <i class="fas fa-om"></i>
-          <h3>12 Premium Pandal Darshans</h3>
-          <p>Visit Mumbai's most iconic and spiritually significant Ganpati pandals, from the wish-fulfilling Lalbaugcha Raja to the eco-friendly Girgaoncha Raja.</p>
-        </div>
-        
-        <div class="feature">
-          <!-- <i class="fas fa-place-of-worship"></i> -->
-          <span style="position: relative; display: inline-block; color: black;">
-            <i class="fas fa-place-of-worship"></i>
-            <i class="fas fa-flag" style="position: absolute; top: -2px; right: -2px; font-size: 0.5em; color: black;"></i>
-          </span>
-          <h3>Siddhivinayak Temple Ceremony</h3>
-          <p>Late evening darshan at India's most famous Ganesha shrine (founded in 1801) with its gold-plated sanctum and closing ceremony puja.</p>
-        </div>
-        
-        <div class="feature">
-          <i class="fas fa-sun"></i>
-          <h3>Strategic Early Morning Access</h3>
-          <p>Beat the crowds with an early start at Lalbaugcha Raja, experiencing the divine energy before the million-person queues form.</p>
-        </div>
-        
-        <div class="feature">
-          <i class="fas fa-praying-hands"></i>
-          <h3>Spiritual Immersion</h3>
-          <p>Carry personal offerings for sankalpas, experience traditional Rig Vedic donation methods, and participate in authentic temple rituals.</p>
-        </div>
-        
-        <div class="feature">
-          <i class="fas fa-route"></i>
-          <h3>Expert Curation</h3>
-          <p>Carefully planned route covering South Mumbai's heritage pandals, Parel's iconic pandals, and King's Circle's golden darshan - all with optimal timing.</p>
-        </div>
-        
-        <div class="feature">
-          <i class="fas fa-utensils"></i>
-          <h3>Authentic Cultural Experience</h3>
-          <p>Savor Mumbai's legendary street food at Badshah Crawford and traditional thalis at Samrat Churchgate between darshans.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Detailed Itinerary</h2>
-      </div>
-      
-      <div class="itinerary-day">
-        <h3>🪔 Day 1 - Aug 30: City Pandals & Evening Temple Darshan</h3>
-        
-        <div class="timeline-item">
-          <div class="time">1:30 PM</div>
-          <div class="location">
-            <h4>Journey Begins</h4>
-            <p>Depart from your South Mumbai hotel for a spiritual adventure through the city's heritage pandals.</p>
+      <div class="trip-cards">
+        <div class="trip-card">
+          <div class="trip-img" style="background-image: url('../images/GaneshPandalHopping.jpg');"></div>
+          <div class="trip-info">
+            <h3>Mumbai Ganpati Darshan and Pandal Hopping</h3>
+            <div class="duration">2 Days • Mumbai</div>
+            <p class="description">This Ganesh Chaturthi, experience the divine energy of Mumbai's most revered Ganpati pandals in an expertly-curated journey, from the legendary Lalbaugcha Raja to the golden splendour of GSB Seva Mandal.</p>
+            <a href="pandal-hopping/index.html" class="btn">Explore Journey</a>
           </div>
         </div>
         
-        <div class="timeline-item">
-          <div class="time">2:00 PM</div>
-          <div class="location">
-            <h4>Churchgate Ganpati 📍</h4>
-            <div class="duration">Duration: 15 minutes</div>
-            <p>A beautifully maintained pandal near iconic Churchgate Station, offering a tranquil start to your darshan journey. Perfect for early arrival with no long queues.</p>
+        <div class="trip-card">
+          <div class="trip-img" style="background-image: url('../images/rath_yatra.jpeg');"></div>
+          <div class="trip-info">
+            <h3>More Journeys Coming Soon</h3>
+            <div class="duration">Stay Tuned</div>
+            <p class="description">We're constantly curating new and unique spiritual experiences. Follow us on our social media to be the first to know about upcoming special journeys.</p>
+            <a href="../contact/index.html" class="btn">Contact Us</a>
           </div>
         </div>
-        
-        <div class="timeline-item">
-          <div class="time">2:30 PM</div>
-          <div class="location">
-            <h4>Fashion Street Ganpati 📍</h4>
-            <div class="duration">Travel: 10 minutes | Duration: 20 minutes</div>
-            <p>A vibrant and colourful pandal on the bustling shopping street, radiating youthful energy. Ideal for photographs and experiencing the street-side festive atmosphere.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">3:00 PM</div>
-          <div class="location">
-            <h4>Chandanwadi Ganpati 📍</h4>
-            <div class="duration">Travel: 10 minutes | Duration: 15 minutes</div>
-            <p>Tucked into a quiet inner lane, this pandal is cherished for its devotion-focused decor. Known for its light-and-sound shows with strong social messages, it offers a soulful darshan of Ganpati in an intimate setting.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">3:30 PM</div>
-          <div class="location">
-            <h4>Jambalwadi Ganpati 📍</h4>
-            <div class="duration">Travel: 10 minutes | Duration: 15 minutes</div>
-            <p>A community-led pandal in the Girgaon cluster, known for its warm, informal ambiance and local devotees managing the space with genuine love.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">4:00 PM</div>
-          <div class="location">
-            <h4>Metro Ganpati 📍</h4>
-            <div class="duration">Travel: 10-15 minutes | Duration: 15 minutes</div>
-            <p>Located near iconic Metro Cinema, this pandal blends Mumbai's cinematic legacy with traditional festivity, offering a grand yet accessible darshan experience.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">4:30 PM</div>
-          <div class="location">
-            <h4>Authentic Mumbai Flavours at Badshah Crawford 📍</h4>
-            <div class="duration">Duration: 30-40 minutes (optional, at own expense)</div>
-            <p>Must-try: Legendary Pav Bhaji + Royal Falooda at this iconic eatery.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">5:15 PM</div>
-          <div class="location">
-            <h4>Crawford Market Ganpati Cluster 📍</h4>
-            <div class="duration">Travel: 5-10 minutes | Duration: 20-30 minutes</div>
-            <p>Explore 2-3 pandals in the heritage bazaar area, each presenting unique theme elements, creating a micro-pilgrimage in Mumbai's commercial heart.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">7:00 PM</div>
-          <div class="location">
-            <h4>Traditional Dinner at Samrat Churchgate 📍</h4>
-            <div class="duration">Travel: 20 minutes | Duration: 1 hour (optional, at own expense)</div>
-            <p>Delicious pure vegetarian thali at this renowned restaurant.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">9:00 PM</div>
-          <div class="location">
-            <h4>Siddhivinayak Temple 📍</h4>
-            <div class="duration">Travel: 25-30 minutes | Darshan: 30 minutes</div>
-            <p>Experience this legendary temple (founded in 1801), one of India's most iconic Ganesha shrines. Known for its gold-plated sanctum and the belief that Lord Ganesha, with the trunk on the right side, grants devotees' deepest wishes. The night visit provides a unique darshan of the closing ceremony puja.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="itinerary-day">
-        <h3>🕔 Day 2 - Aug 31: Dawn with the Divine - Iconic Pandals</h3>
-        
-        <div class="timeline-item">
-          <div class="time">4:00 AM</div>
-          <div class="location">
-            <h4>Early Morning Departure</h4>
-            <p>Begin your journey to witness Mumbai's most revered Ganpati before the crowds arrive.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">4:45 AM</div>
-          <div class="location">
-            <h4>Lalbaugcha Raja, Parel 📍</h4>
-            <div class="duration">Duration: ~1.5 hours</div>
-            <p>One of the oldest pandals in the city and touted to be an icchapurti (wish-fulfilling) Ganesha, this is often revered as the “King of Mumbai's Ganpatis” and is visited by famous film stars, cricketers, politicians and devotees from across the globe.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">6:30 AM</div>
-          <div class="location">
-            <h4>Mumbaicha Raja (Parel) 📍</h4>
-            <div class="duration">Short walk | Duration: 30 minutes</div>
-            <p>Serene yet iconic, this pandal has been operational for almost 100 years. Famous in Mumbai for always replicating major Hindu temples from around the country, offering a unique architectural spiritual experience.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">7:15 AM</div>
-          <div class="location">
-            <h4>GSB Seva Mandal, King's Circle 📍</h4>
-            <div class="duration">Travel: 25 minutes | Duration: 30-40 minutes</div>
-            <p>Dubbed Mumbai's "richest Ganpati," adorned with over 60 kg of gold and silver ornaments. Experience the elegant, gold-adorned Ganpati in a vedic atmosphere. They follow traditional Rig Vedic methods of accepting donations - rice, flour, ghee, sugar and coconut donations in your body weight.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">8:30 AM</div>
-          <div class="location">
-            <h4>Return to Hotel</h4>
-            <div class="duration">Travel: ~30 minutes | Duration: 45 minutes</div>
-            <p>Freshen up, enjoy breakfast, and reflect on your spiritual journey.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">10:00 AM</div>
-          <div class="location">
-            <h4>Khetwadi Cha Ganraj 📍</h4>
-            <div class="duration">Travel: 25 minutes | Duration: 30-40 minutes</div>
-            <p>Famed for towering idols reaching up to 40 ft, this pandal consistently wins awards for innovative themes—from mythological scenes to architectural replicas. A true artistic spectacle with many lanes offering additional Ganpatis for optional exploration.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">11:00 AM</div>
-          <div class="location">
-            <h4>Girgaoncha Raja 📍</h4>
-            <div class="duration">Travel: 10 minutes | Duration: 30-40 minutes</div>
-            <p>Known as "Raja Paryavarnacha" (King of the Environment), this features one of the oldest and largest eco-friendly clay idols in Mumbai (approx. 20+ ft tall), inaugurated by Lokmanya Tilak himself.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="time">12:30 PM</div>
-          <div class="location">
-            <h4>Journey Completion</h4>
-            <p>Checkout and depart to airport with hearts full of Bappa's blessings and memories of a lifetime!</p>
-          </div>
-        </div>
-      </div>
-      
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="../../contact/index.html" class="btn">Contact Us to Book Your Trip</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Inclusions & Package Details</h2>
-      </div>
-      
-      <div class="package-details">
-        <div class="inclusions">
-          
-          
-          <div class="inclusion-item">
-            <i class="fas fa-car"></i>
-            <div>
-              <h4>Transportation</h4>
-              <p>AC vehicles for pandal hopping and intra-city movement</p>
-            </div>
-          </div>
-          
-          <div class="inclusion-item">
-            <i class="fas fa-hotel"></i>
-            <div>
-              <h4>Accommodation</h4>
-              <p>Premium hotel accommodation in South Mumbai (Marine Drive/Churchgate)</p>
-            </div>
-          </div>
-          
-          <div class="inclusion-item">
-            <i class="fas fa-utensils"></i>
-            <div>
-              <h4>Meals</h4>
-              <p>Daily breakfast at your hotel</p>
-            </div>
-          </div>
-          
-          <div class="inclusion-item">
-            <i class="fas fa-om"></i>
-            <div>
-              <h4>Guides</h4>
-              <p>Expert local guides with deep cultural and spiritual knowledge</p>
-            </div>
-          </div>
-          
-          <div class="inclusion-item">
-            <i class="fas fa-plane"></i>
-            <div>
-              <h4>Travel*</h4>
-              <p>Booking of BLR-BOM-BLR flights (airfare at actuals)</p>
-            </div>
-          </div>
-
-          <div class="inclusion-item">
-            <i class="fas fa-hands-helping"></i>
-            <div>
-              <h4>Support</h4>
-              <p>24/7 support throughout your journey</p>
-            </div>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 2rem;">
-          <h3>Package price* (including GST): </h3>
-          <p>Single: ₹24,900/- per person on non-sharing basis</p>
-          <p>Couple: ₹34,900/- per couple on twin-sharing basis</p>
-          <p>Children under 9: ₹9,900/- per child when accompanied by parent</p>
-          <p><em>(*Airline fares are extra and at actuals, we will facilitate the booking for you)</em></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Recommended Preparations</h2>
-      </div>
-      
-      <div class="accordion">
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-tshirt"></i> What to Wear
-          </div>
-          <div class="accordion-content">
-            <ul>
-              <li>Traditional Indian clothing recommended (kurta-pyjama/shirt-pant for men, kurta/salwar-kameez/saree for women)</li>
-              <li>Comfortable slip-on shoes for easy walking as well as wearing and removal</li>
-              <li>Light cotton fabrics suitable for Mumbai's warm, humid weather</li>
-              <li>Modest clothing respecting temple and pandal sentiments. Entry may be restricted otherwise</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-suitcase"></i> What to Bring
-          </div>
-          <div class="accordion-content">
-            <ul>
-              <li>Small bag for personal offerings and essentials</li>
-              <li>Handkerchief/small towel for the humid Mumbai climate</li>
-              <li>Cap and sunglasses for comfort under the sun</li>
-              <li>Umbrella for protection from rain and drizzle</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-gift"></i> Personal Offerings
-          </div>
-          <div class="accordion-content">
-            <ul>
-              <li>Cash in small denominations</li>
-              <li>Modaks or ladoos (Ganpati's favorite sweets)</li>
-              <li>Red flowers or garlands</li>
-              <li>Coconut for traditional prasad</li>
-              <li>Incense sticks</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-pray"></i> Mantras & Prayers
-          </div>
-          <div class="accordion-content">
-            <ul>
-              <li>"Om Gam Ganapataye Namaha" - The most powerful Ganpati mantra</li>
-              <li>Prepare your personal sankalp (wish/prayer) to present to Bappa</li>
-              <li>"Vakratunda Mahakaya" mantra for removing obstacles</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-place-of-worship"></i> Pandal Protocols
-          </div>
-          <div class="accordion-content">
-            <ul>
-              <li>Remove shoes before entering pandal areas</li>
-              <li>Join palms in namaste when approaching the deity</li>
-              <li>Wait patiently in darshan lines - patience is part of the spiritual journey</li>
-              <li>Maintain silence or chant softly during darshan</li>
-              <li>Photography guidelines will be explained by our guides</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-users"></i> Handling Crowds
-          </div>
-          <div class="accordion-content">
-            <ul>
-              <li>Stay close to your group especially during peak darshan times</li>
-              <li>Follow guide's instructions for optimal and safe darshan experience</li>
-              <li>Be prepared for crowds - Mumbai's Ganpati festival attracts millions!</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      
-      <div class="accordion">
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-plane"></i> Travel & Timing
-          </div>
-          <div class="accordion-content">
-            <div class="faq-item">
-              <div class="faq-question">Q: What are the exact travel dates?</div>
-              <div class="faq-answer">A: [Insert specific dates]. The itinerary is designed around optimal darshan timings, including early morning access to avoid peak crowds.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: Can I extend my stay in Mumbai?</div>
-              <div class="faq-answer">A: Yes, you can modify your return flight. Additional accommodation can be arranged at your own cost.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: What if there are flight delays?</div>
-              <div class="faq-answer">A: Our team monitors all flights and will adjust the itinerary accordingly to ensure you don't miss key darshans.</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-hotel"></i> Accommodation & Meals
-          </div>
-          <div class="accordion-content">
-            <div class="faq-item">
-              <div class="faq-question">Q: What standard of hotel accommodation is provided?</div>
-              <div class="faq-answer">A: Premium 4-star hotels in South Mumbai (Marine Drive/Colaba/Churchgate area) with modern amenities and strategic location for easy pandal access.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: Are all meals vegetarian?</div>
-              <div class="faq-answer">A: Yes, all included meals are pure vegetarian, respecting the spiritual nature of the journey. We'll also experience authentic Mumbai vegetarian street food.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: Can dietary restrictions be accommodated?</div>
-              <div class="faq-answer">A: Yes, please inform us in advance of any dietary restrictions during booking. Jain food and other specific requirements can be arranged.</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-car"></i> Transportation & Group
-          </div>
-          <div class="accordion-content">
-            <div class="faq-item">
-              <div class="faq-question">Q: What kind of transportation is provided?</div>
-              <div class="faq-answer">A: Comfortable AC vehicles suitable for the group size, with experienced drivers familiar with Mumbai's festival traffic patterns.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: How many people will be in the group?</div>
-              <div class="faq-answer">A: Maximum 20 devotees to ensure personalized attention and meaningful spiritual experience.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: Will there be a tour guide?</div>
-              <div class="faq-answer">A: Yes, expert local guides with deep knowledge of Mumbai's Ganpati traditions and cultural significance of each pandal.</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-credit-card"></i> Pricing & Payments
-          </div>
-          <div class="accordion-content">
-            <div class="faq-item">
-              <div class="faq-question">Q: What is not included in the package price?</div>
-              <div class="faq-answer">A: Personal expenses, additional meals beyond breakfast, shopping, and any activities not listed in the itinerary.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: What is your cancellation policy?</div>
-              <div class="faq-answer">A: Bookings once made cannot be cancelled or refunded but you can transfer your booking to another person. Flight cancellation and re-booking under the new traveller's name will be charged extra, at actuals.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: Do you accept installment payments?</div>
-              <div class="faq-answer">A: As there is very high demand and limited seats, payment is to be made in full at the time of booking to reserve your seat.</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-om"></i> Spiritual Experience
-          </div>
-          <div class="accordion-content">
-            <div class="faq-item">
-              <div class="faq-question">Q: Do I need to follow any religious restrictions?</div>
-              <div class="faq-answer">A: While there are no mandatory restrictions, we recommend avoiding non-vegetarian food and alcohol during the journey to maintain the spiritual sanctity.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: Can I make personal prayers/sankalpas at each pandal?</div>
-              <div class="faq-answer">A: Absolutely! This is encouraged. We provide time for personal prayers and will guide you on appropriate offering methods.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: What if I'm not familiar with Hindu traditions?</div>
-              <div class="faq-answer">A: No prior knowledge required! Our guides will explain the significance of each ritual and help you participate respectfully and meaningfully.</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="toggleAccordion(this)">
-            <i class="fas fa-info-circle"></i> Practical Information
-          </div>
-          <div class="accordion-content">
-            <div class="faq-item">
-              <div class="faq-question">Q: Will I have time for shopping?</div>
-              <div class="faq-answer">A: Yes, Fashion Street and Crawford Market areas offer shopping opportunities, though the primary focus is spiritual darshan and time for shopping is limited to the break times.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: What about mobile network and WiFi?</div>
-              <div class="faq-answer">A: All major Indian networks work well in Mumbai. Your hotel will provide WiFi, and many public areas have connectivity.</div>
-            </div>
-            
-            <div class="faq-item">
-              <div class="faq-question">Q: Is this suitable for elderly travellers?</div>
-              <div class="faq-answer">A: It is suitable for elderly travellers as it is not a very strenuous trip. However, there will be considerable walking and standing in queues at some pandals. Please assess physical fitness requirements and consult us for any special arrangements needed.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="booking">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Ready to Begin Your Sacred Journey?</h2>
-        <p>Join us for this once-in-a-lifetime spiritual experience during Ganesh Chaturthi</p>
-      </div>
-      
-      <div style="text-align: center;">
-        <a href="../../contact/index.html" class="btn">Contact Us to Book Your Trip</a>
-        <p style="margin-top: 1rem;">For more details and quick booking, please call us directly at +91 9819120245</p>
       </div>
     </div>
   </section>
@@ -1134,11 +506,11 @@
         <div class="footer-column">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../temples/index.html">Temple Tourism</a></li>
-            <li><a href="../../products/index.html">Premium Products</a></li>
-            <li><a href="../index.html">Special Trips</a></li>
-            <li><a href="../../contact/index.html">Contact Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../temples/index.html">Temple Tourism</a></li>
+            <li><a href="../products/index.html">Premium Products</a></li>
+            <li><a href="index.html">Special Trips</a></li>
+            <li><a href="../contact/index.html">Contact Us</a></li>
           </ul>
         </div>
         
@@ -1160,98 +532,78 @@
       </div>
     </div>
   </footer>
+<script>
+  // Ensure hero is fully visible below the fixed header on all screen sizes
+  function adjustHeroOffset() {
+    const headerEl = document.querySelector('header');
+    const heroEl = document.querySelector('.hero');
+    if (!headerEl || !heroEl) return;
+    const headerHeight = headerEl.offsetHeight;
+    heroEl.style.marginTop = headerHeight + 'px';
+  }
 
-  <script>
-    function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      const isActive = content.classList.contains('active');
-      
-      // Close all accordion items
-      document.querySelectorAll('.accordion-content').forEach(item => {
-        item.classList.remove('active');
-      });
-      document.querySelectorAll('.accordion-header').forEach(item => {
-        item.classList.remove('active');
-      });
-      
-      // Open clicked item if it wasn't already open
-      if (!isActive) {
-        content.classList.add('active');
-        header.classList.add('active');
-      }
-    }
+  window.addEventListener('load', adjustHeroOffset);
+  window.addEventListener('resize', adjustHeroOffset);
+  window.addEventListener('orientationchange', adjustHeroOffset);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(adjustHeroOffset);
+  }
 
-    // Ensure hero is fully visible below the fixed header on all screen sizes
-    function adjustHeroOffset() {
-      const headerEl = document.querySelector('header');
-      const heroEl = document.querySelector('.hero');
-      if (!headerEl || !heroEl) return;
-      const headerHeight = headerEl.offsetHeight;
-      heroEl.style.marginTop = headerHeight + 'px';
-    }
-
-    window.addEventListener('load', adjustHeroOffset);
-    window.addEventListener('resize', adjustHeroOffset);
-    window.addEventListener('orientationchange', adjustHeroOffset);
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(adjustHeroOffset);
-    }
-
-    // Simple dropdown functionality
-    function setupDropdowns() {
-      const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
-      
-      dropdownLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          const menu = this.parentElement.querySelector('.dropdown-content');
-          if (!menu) return;
-          
-          const isMobile = window.matchMedia('(max-width: 768px)').matches;
-          
-          if (isMobile) {
-            const isOpen = menu.classList.contains('show');
-            if (isOpen) {
-              // Submenu already open → close it and allow navigation
-              menu.classList.remove('show');
-              return; // Allow the default navigation to proceed
-            }
-            
-            // First click → open submenu instead of navigating
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Close all other dropdowns
-            document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
-              dc.classList.remove('show');
-            });
-            
-            // Open current dropdown
-            menu.classList.add('show');
+  // Simple dropdown functionality
+  function setupDropdowns() {
+    const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
+    
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        const menu = this.parentElement.querySelector('.dropdown-content');
+        if (!menu) return;
+        
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        
+        if (isMobile) {
+          const isOpen = menu.classList.contains('show');
+          if (isOpen) {
+            // Submenu already open → close it and allow navigation
+            menu.classList.remove('show');
+            return; // Allow the default navigation to proceed
           }
+          
+          // First click → open submenu instead of navigating
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Close all other dropdowns
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
+          
+          // Open current dropdown
+          menu.classList.add('show');
+        }
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (ev) => {
+      if (!ev.target.closest('nav .dropdown')) {
+        document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+          dc.classList.remove('show');
         });
-      });
-      
-      // Close dropdowns when clicking outside
-      document.addEventListener('click', (ev) => {
-        if (!ev.target.closest('nav .dropdown')) {
-          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
-            dc.classList.remove('show');
-          });
-        }
-      });
-      
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        if (!window.matchMedia('(max-width: 768px)').matches) {
-          // On larger screens, remove mobile classes
-          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
-            dc.classList.remove('show');
-          });
-        }
-      });
-    }
+      }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (!window.matchMedia('(max-width: 768px)').matches) {
+        // On larger screens, remove mobile classes
+        document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+          dc.classList.remove('show');
+        });
+      }
+    });
+  }
 
-    setupDropdowns();
-  </script>
+  setupDropdowns();
+</script>
 </body>
 </html> 
