@@ -507,18 +507,23 @@
         right: 0;
         background: linear-gradient(to left, var(--white) 0%, transparent 100%);
       }
-      nav ul { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+      nav ul { 
+        flex-wrap: nowrap; 
+        overflow-x: auto; 
+        scrollbar-width: none; 
+        padding: 0 8px; 
+        margin: 0 -8px;
+        /* Ensure proper centering */
+        display: flex;
+        align-items: center;
+        min-width: max-content;
+      }
       nav ul::-webkit-scrollbar { display: none; }
       nav ul li { 
         flex: 0 0 auto; 
         margin-right: 8px;
       }
       nav ul li:last-child { margin-right: 0; }
-      /* Show partial preview of next/previous items */
-      nav ul { 
-        padding: 0 8px; 
-        margin: 0 -8px;
-      }
     }
 
     /* Contact Form Styles */
@@ -1053,8 +1058,9 @@
           if (isMobile) {
             const isOpen = menu.classList.contains('show');
             if (isOpen) {
-              // Submenu already open → allow navigation on second tap
-              return;
+              // Submenu already open → close it and allow navigation
+              menu.classList.remove('show');
+              return; // Allow the default navigation to proceed
             }
             
             // First tap on mobile → open submenu instead of navigating
@@ -1100,11 +1106,26 @@
       const nav = document.querySelector('nav');
       if (!nav) return;
       
-      // Find the current page's menu item (Home page)
+      // Find the current page's menu item dynamically
       let currentMenuItem = null;
-      const homeMenuItem = nav.querySelector('ul li a[href="index.html"]');
-      if (homeMenuItem) {
-        currentMenuItem = homeMenuItem;
+      const currentPath = window.location.pathname;
+      
+      // Map current path to menu items
+      if (currentPath === '/' || currentPath.endsWith('index.html')) {
+        // Home page
+        currentMenuItem = nav.querySelector('ul li a[href="index.html"]');
+      } else if (currentPath.includes('/temples/')) {
+        // Temple Tourism page
+        currentMenuItem = nav.querySelector('ul li a[href="temples/index.html"]');
+      } else if (currentPath.includes('/products/')) {
+        // Premium Products page
+        currentMenuItem = nav.querySelector('ul li a[href="products/index.html"]');
+      } else if (currentPath.includes('/special-trips/')) {
+        // Special Trips page
+        currentMenuItem = nav.querySelector('ul li a[href="special-trips/index.html"]');
+      } else if (currentPath.includes('/contact/')) {
+        // Contact Us page
+        currentMenuItem = nav.querySelector('ul li a[href="contact/index.html"]');
       }
       
       if (currentMenuItem) {
@@ -1114,9 +1135,13 @@
         const itemWidth = currentMenuItem.offsetWidth;
         const scrollLeft = itemLeft - (navWidth / 2) + (itemWidth / 2);
         
+        // Ensure we don't scroll past the beginning or end
+        const maxScrollLeft = nav.scrollWidth - navWidth;
+        const finalScrollLeft = Math.max(0, Math.min(scrollLeft, maxScrollLeft));
+        
         // Smooth scroll to the calculated position
         nav.scrollTo({
-          left: Math.max(0, scrollLeft),
+          left: finalScrollLeft,
           behavior: 'smooth'
         });
       }
