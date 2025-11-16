@@ -402,7 +402,14 @@
 
     .package-badge {
       font-size: 1.4rem;
+      font-weight: 600;
       margin-bottom: 0.4rem;
+    }
+
+    .package-subtitle {
+      font-size: 1rem;
+      color: var(--accent-color);
+      font-style: italic;
     }
 
     .note {
@@ -529,10 +536,15 @@
     }
 
     @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+
       nav ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
+        margin-top: 1rem;
       }
 
       .hero {
@@ -544,8 +556,7 @@
       }
 
       nav ul li {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin: 0;
       }
 
       .dropdown:hover .dropdown-content {
@@ -562,6 +573,46 @@
 
       .dropdown-content.show {
         display: block !important;
+      }
+
+      .package-table {
+        font-size: 0.9rem;
+      }
+
+      .package-table th,
+      .package-table td {
+        padding: 1rem;
+        display: block;
+        width: 100%;
+      }
+
+      .package-table thead {
+        display: none;
+      }
+
+      .package-table tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        border: 1px solid #f0ece4;
+        border-radius: 8px;
+      }
+
+      .package-table td:first-child {
+        background: #f9f6f0;
+        font-weight: 600;
+        border-bottom: 2px solid #e9dfcf;
+      }
+
+      .package-table td:last-child {
+        border-bottom: none;
+      }
+
+      .package-badge {
+        font-size: 1.3rem;
+      }
+
+      .package-subtitle {
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -682,7 +733,6 @@
             <thead>
               <tr>
                 <th>Package</th>
-                <th>Experience</th>
                 <th>Highlights</th>
               </tr>
             </thead>
@@ -690,24 +740,24 @@
               <tr>
                 <td>
                   <div class="package-badge">Premium</div>
+                  <div class="package-subtitle">Comfort &amp; Convenience</div>
                 </td>
-                <td>Comfort &amp; Convenience</td>
                 <td>Stay at Ramada, Clarks Inn Express, Praveg Tent City Brahma Kund or equivalent ·<br>
                   Toyota Crysta transfers · Private Ganga boat ride · Elevated seating for Ganga aarti viewing · Concierge assistance.</td>
               </tr>
               <tr>
                 <td>
                   <div class="package-badge">Luxury</div>
+                  <div class="package-subtitle">Elevated Spiritual Experience</div>
                 </td>
-                <td>Elevated Spiritual Experience</td>
                 <td>Stay at Taj Ganges, Park Inn by Radisson (Deluxe) or equivalent ·<br>
                   Toyota Crysta transfers · Deluxe private Ganga boat ride · Front rows seating for Ganga aarti viewing · Concierge assistance.</td>
               </tr>
               <tr>
                 <td>
                   <div class="package-badge">Royale</div>
+                  <div class="package-subtitle">The Saum Signature Pilgrimage</div>
                 </td>
-                <td>The Saum Signature Pilgrimage</td>
                 <td>Stay at Taj Nadesar, Brij Rama, Park Inn by Radisson (Suite) or equivalent.<br>
                   Mercedes/BMW transfers · Deluxe private Ganga boat ride with live classical performance · Ganga aarti viewing with participation · Concierge-led travel throughout.</td>
               </tr>
