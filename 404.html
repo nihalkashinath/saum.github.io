@@ -85,6 +85,10 @@
       background-color: var(--white);
       padding: 1.5rem 0;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
     
     .header-container {
@@ -118,6 +122,52 @@
       color: var(--menu-active-color);
     }
     
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--white);
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1001;
+      border-radius: 4px;
+      top: 100%;
+      left: 0;
+      margin-top: 0;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    .dropdown-content a {
+      color: var(--text-color);
+      padding: 0.8rem 1rem;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+    }
+    
+    .dropdown > a::after {
+      content: ' ▼';
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
+    }
+    
     /* 404 Content */
     .error-content {
       flex: 1;
@@ -127,6 +177,7 @@
       align-items: center;
       text-align: center;
       padding: 4rem 2rem;
+      margin-top: 5rem;
     }
     
     .error-content h1 {
@@ -197,6 +248,25 @@
       border-top: 1px solid rgba(255,255,255,0.1);
     }
     
+    /* Mobile dropdown overrides */
+    @media (max-width: 768px) {
+      .dropdown:hover .dropdown-content {
+        display: none; /* Disable hover on mobile */
+      }
+      
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border: 1px solid var(--secondary-color);
+        margin-top: 0.5rem;
+        border-radius: 4px;
+      }
+      
+      .dropdown-content.show {
+        display: block !important;
+      }
+    }
+    
     /* Responsive */
     @media (max-width: 768px) {
       .header-container {
@@ -205,11 +275,13 @@
       
       nav ul {
         margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
       }
       
       nav ul li {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin: 0;
       }
       
       .error-content h1 {
@@ -231,8 +303,19 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="temples/index.html">Temple Tourism</a></li>
+          <li class="dropdown">
+            <a href="temples/index.html">Temple Tourism</a>
+            <div class="dropdown-content">
+              <a href="temples/ayodhya-varanasi/index.html">Ayodhya & Varanasi Yatra</a>
+            </div>
+          </li>
           <li><a href="products/index.html">Premium Products</a></li>
+          <li class="dropdown">
+            <a href="special-trips/index.html">Special Trips</a>
+            <div class="dropdown-content">
+              <a href="special-trips/pandal-hopping/index.html">Ganpati Pandal Hopping</a>
+            </div>
+          </li>
           <li><a href="contact/index.html">Contact Us</a></li>
         </ul>
       </nav>
@@ -262,6 +345,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="temples/index.html">Temple Tourism</a></li>
             <li><a href="products/index.html">Premium Products</a></li>
+            <li><a href="special-trips/index.html">Special Trips</a></li>
             <li><a href="contact/index.html">Contact Us</a></li>
           </ul>
         </div>
@@ -284,5 +368,62 @@
       </div>
     </div>
   </footer>
+  <script>
+    // Simple dropdown functionality
+    function setupDropdowns() {
+      const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
+      
+      dropdownLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          const menu = this.parentElement.querySelector('.dropdown-content');
+          if (!menu) return;
+          
+          const isMobile = window.matchMedia('(max-width: 768px)').matches;
+          
+          if (isMobile) {
+            const isOpen = menu.classList.contains('show');
+            if (isOpen) {
+              // Submenu already open → close it and allow navigation
+              menu.classList.remove('show');
+              return; // Allow the default navigation to proceed
+            }
+            
+            // First click → open submenu instead of navigating
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close all other dropdowns
+            document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+              dc.classList.remove('show');
+            });
+            
+            // Open current dropdown
+            menu.classList.add('show');
+          }
+        });
+      });
+      
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', (ev) => {
+        if (!ev.target.closest('nav .dropdown')) {
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
+        }
+      });
+      
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 768px)').matches) {
+          // On larger screens, remove mobile classes
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => {
+            dc.classList.remove('show');
+          });
+        }
+      });
+    }
+
+    setupDropdowns();
+  </script>
 </body>
 </html> 
