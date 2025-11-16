@@ -304,17 +304,16 @@
 
     .contact-method {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       margin-bottom: 2.5rem;
+      gap: 1.5rem;
     }
 
     .contact-method i {
       font-size: 1.8rem;
       color: var(--primary-color);
-      margin-right: 3rem;
       width: 40px;
       text-align: center;
-      margin-top: 0.4rem;
     }
 
     .contact-text {
@@ -326,6 +325,9 @@
       margin-bottom: 0.8rem;
       font-size: 1.2rem;
       line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
     }
 
     .contact-text p {
@@ -422,6 +424,21 @@
       font-size: 1.1rem;
       line-height: 1.6;
       color: var(--text-color);
+    }
+
+    .contact-link.phone {
+      color: #007bff;
+      font-weight: 400;
+    }
+
+    .contact-link.whatsapp {
+      color: #25D366;
+      font-weight: 400;
+    }
+
+    .contact-link.email {
+      color: #007bff;
+      font-weight: 400;
     }
 
     .consent-checkbox {
@@ -560,7 +577,12 @@
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="../temples/index.html">Temple Tourism</a></li>
+          <li class="dropdown">
+            <a href="../temples/index.html">Temple Tourism</a>
+            <div class="dropdown-content">
+              <a href="../temples/ayodhya-varanasi/index.html">Ayodhya & Varanasi Yatra</a>
+            </div>
+          </li>
           <li><a href="../products/index.html">Premium Products</a></li>
           <li class="dropdown">
             <a href="../special-trips/index.html">Special Trips</a>
@@ -685,30 +707,32 @@
           <h3>Our Information</h3>
           <p>If your requirement is urgent, please do not hestitate to call or email us directly. Our information is available below.</p>
           <div class="contact-method">
-            <i class="fas fa-map-marker-alt"></i>
             <div class="contact-text">
-              <h4>Visit Us</h4>
+              <h4><i class="fas fa-map-marker-alt"></i> Visit Us</h4>
               <p>Saum Luxury Experience Centre<br>Bangalore, India</p>
             </div>
           </div>
           <div class="contact-method">
-            <i class="fas fa-phone-alt"></i>
             <div class="contact-text">
-              <h4>Call Us</h4>
-              <p>+91 98191 20245</p>
+              <h4><i class="fas fa-phone-alt"></i> Call Us</h4>
+              <p><a class="contact-link phone" href="tel:+919819120245">+91 98191 20245</a></p>
             </div>
           </div>
           <div class="contact-method">
-            <i class="fas fa-envelope"></i>
             <div class="contact-text">
-              <h4>Email Us</h4>
-              <p>support@saum.in</p>
+              <h4><i class="fab fa-whatsapp"></i> WhatsApp Us</h4>
+              <p><a class="contact-link whatsapp" href="https://wa.me/919819120245">+91 98191 20245</a></p>
             </div>
           </div>
           <div class="contact-method">
-            <i class="fas fa-clock"></i>
             <div class="contact-text">
-              <h4>Operating Hours</h4>
+              <h4><i class="fas fa-envelope"></i> Email Us</h4>
+              <p><a class="contact-link email" href="mailto:support@saum.in">support@saum.in</a></p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-text">
+              <h4><i class="fas fa-clock"></i> Operating Hours</h4>
               <p>Tuesday - Sunday: 10:00 AM - 6:00 PM<br>Monday: By prior appointment only</p>
             </div>
           </div>
