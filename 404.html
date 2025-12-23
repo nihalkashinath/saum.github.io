@@ -144,6 +144,11 @@
       display: block;
     }
     
+    .dropdown:last-child .dropdown-content {
+      right: 0;
+      left: auto;
+    }
+    
     .dropdown-content a {
       color: var(--text-color);
       padding: 0.8rem 1rem;
@@ -151,6 +156,8 @@
       display: block;
       border-bottom: 1px solid #f0f0f0;
       transition: background-color 0.3s ease;
+      white-space: normal;
+      line-height: 1.4;
     }
     
     .dropdown-content a:last-child {
@@ -317,6 +324,14 @@
             </div>
           </li>
           <li><a href="/contact/index.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="#">Policies</a>
+            <div class="dropdown-content">
+              <a href="/policies/terms-and-conditions.html">Terms &amp; Conditions</a>
+              <a href="/policies/privacy-policy.html">Privacy Policy</a>
+              <a href="/policies/refunds-cancellations.html">Refunds &amp; Cancellations</a>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
@@ -347,6 +362,9 @@
             <li><a href="/products/index.html">Premium Products</a></li>
             <li><a href="/special-trips/index.html">Special Trips</a></li>
             <li><a href="/contact/index.html">Contact Us</a></li>
+            <li><a href="/policies/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+            <li><a href="/policies/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/policies/refunds-cancellations.html">Refunds &amp; Cancellations</a></li>
           </ul>
         </div>
         
