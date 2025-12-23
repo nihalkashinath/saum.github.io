@@ -181,6 +181,12 @@
       margin-top: 0;
     }
     
+    /* Make last dropdown open to the left */
+    nav ul li.dropdown:last-child .dropdown-content {
+      left: auto;
+      right: 0;
+    }
+    
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -192,6 +198,8 @@
       display: block;
       border-bottom: 1px solid #f0f0f0;
       transition: background-color 0.3s ease;
+      white-space: normal;
+      line-height: 1.4;
     }
     
     .dropdown-content a:last-child {
@@ -461,6 +469,14 @@
             </div>
           </li>
           <li><a href="../contact/index.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="../policies/terms-and-conditions.html">Policies</a>
+            <div class="dropdown-content">
+              <a href="../policies/terms-and-conditions.html">Terms &amp; Conditions</a>
+              <a href="../policies/privacy-policy.html">Privacy Policy</a>
+              <a href="../policies/refunds-cancellations.html">Refunds &amp; Cancellations</a>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
@@ -556,6 +572,15 @@
             <li><a href="../products/index.html">Premium Products</a></li>
             <li><a href="../special-trips/index.html">Special Trips</a></li>
             <li><a href="../contact/index.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Policies</h3>
+          <ul>
+            <li><a href="../policies/terms-and-conditions.html">Terms & Conditions</a></li>
+            <li><a href="../policies/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../policies/refunds-cancellations.html">Refunds & Cancellations</a></li>
           </ul>
         </div>
         
