@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3PZ00SC5G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L3PZ00SC5G');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Saum</title>
+  <meta name="description" content="Learn about Saum's story, our founders, and the philosophy behind our elevated temple journeys.">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="About Us - Saum">
+  <meta property="og:description" content="Learn about Saum's story, our founders, and the philosophy behind our elevated temple journeys.">
+  <meta property="og:image" content="https://www.saum.in/images/home_cover.jpg">
+  <meta property="og:url" content="https://www.saum.in/about/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us - Saum">
+  <meta name="twitter:description" content="Learn about Saum's story, our founders, and the philosophy behind our elevated temple journeys.">
+  <meta name="twitter:image" content="https://www.saum.in/images/home_cover.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+  <link rel="shortcut icon" href="../images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Saum" />
+  <link rel="manifest" href="../images/site.webmanifest" />
+
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-color: #c9b18c;
+      --secondary-color: #f5f0e6;
+      --text-color: #3a3a3a;
+      --accent-color: #8a754d;
+      --light-bg: #faf7f2;
+      --white: #ffffff;
+      --light-beige: #fdfbf7;
+      --menu-active-color: #FF8C00;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cormorant Garamond', 'Palatino', serif;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+    h2 { font-size: 2rem; margin-top: 2rem; margin-bottom: 1rem; }
+
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      margin: 1rem 0;
+      letter-spacing: 1px;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* ── Header ── */
+    header {
+      background-color: var(--white);
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    header.header-hidden {
+      transform: translateY(-100%);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img { width: 130px; height: auto; }
+
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin-left: 2rem; }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active { color: var(--menu-active-color); }
+
+    /* Dropdown */
+    .dropdown { position: relative; }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--white);
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1001;
+      border-radius: 4px;
+      top: 100%;
+      left: 0;
+      margin-top: 0;
+    }
+
+    nav ul li.dropdown:last-child .dropdown-content { left: auto; right: 0; }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    .dropdown-content a {
+      color: var(--text-color);
+      padding: 0.8rem 1rem;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background-color 0.3s ease;
+      white-space: normal;
+      line-height: 1.4;
+    }
+
+    .dropdown-content a:last-child { border-bottom: none; }
+
+    .dropdown-content a:hover {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+    }
+
+    .dropdown > a::after { content: ' ▼'; font-size: 0.8rem; margin-left: 0.3rem; }
+
+    @media (max-width: 768px) {
+      .dropdown:hover .dropdown-content { display: none; }
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border: 1px solid var(--secondary-color);
+        margin-top: 0.5rem;
+        border-radius: 4px;
+      }
+      .dropdown-content.show { display: block !important; }
+    }
+
+    /* ── Hero ── */
+    .hero {
+      height: 90vh;
+      min-height: 320px;
+      background: linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)),
+                  url('../images/AboutUsHero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    .hero-content { max-width: 800px; padding: 0 2rem; }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      letter-spacing: 3px;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      opacity: 0.9;
+    }
+
+    /* ── Sections ── */
+    .section {
+      padding: 5rem 0;
+      background-color: var(--light-beige);
+    }
+
+    .section:nth-child(even) { background-color: var(--secondary-color); }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-heading h2 { margin-top: 0; }
+
+    .section-divider {
+      width: 60px;
+      height: 2px;
+      background-color: var(--primary-color);
+      margin: 1rem auto 1.5rem;
+    }
+
+    /* ── Our Story ── */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .story-image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-text h2 {
+      font-size: 2rem;
+      margin-top: 0;
+      color: var(--text-color);
+    }
+
+    .story-text .story-tagline {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .legacy-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--primary-color);
+      border-radius: 4px;
+      color: var(--accent-color);
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .story-image img { height: 300px; }
+    }
+
+    /* ── Founders ── */
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 1rem;
+    }
+
+    .founder-card {
+      background-color: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .founder-card:hover { transform: translateY(-6px); }
+
+    .founder-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border: 4px solid var(--secondary-color);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .founder-info {
+      flex: 1;
+      width: 100%;
+    }
+
+    .founder-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--text-color);
+    }
+
+    .founder-title {
+      font-size: 1rem;
+      color: var(--accent-color);
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+
+    .founder-bio {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #555;
+      margin-bottom: 0;
+      text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+      .founders-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* ── Philosophy ── */
+    .philosophy-tree {
+      position: relative;
+      min-height: 1270px;
+      margin-top: 2rem;
+    }
+
+    .tree-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .tree-point {
+      position: absolute;
+      width: 40%;
+    }
+
+    .tree-point.left {
+      left: 0;
+      text-align: right;
+      padding-right: 1.5rem;
+    }
+
+    .tree-point.right {
+      right: 0;
+      text-align: left;
+      padding-left: 1.5rem;
+    }
+
+    .tree-point h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.5px;
+    }
+
+    .tree-point p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #555;
+      margin-bottom: 0;
+      text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+      .philosophy-tree {
+        min-height: unset;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .tree-svg { display: none; }
+      .tree-point {
+        position: static;
+        width: 100%;
+        text-align: left !important;
+        padding: 0 0 0 1rem !important;
+        border-left: 3px solid var(--primary-color);
+      }
+    }
+
+    .philosophy-closing {
+      margin-top: 3rem;
+      text-align: center;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e8ddd0;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 6rem 0;
+      background: linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
+                  url('../images/AboutUsFooter.webp') center/cover no-repeat;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      opacity: 0.88;
+      max-width: 580px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-btn-group {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
+      border: 2px solid var(--white);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background-color: var(--text-color);
+      color: var(--white);
+      padding: 3rem 0;
+    }
+
+    .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    .footer-column { flex: 1; min-width: 250px; margin-bottom: 2rem; }
+    .footer-column h3 { color: var(--primary-color); margin-bottom: 1.5rem; }
+    .footer-column ul { list-style: none; }
+    .footer-column ul li { margin-bottom: 0.8rem; }
+    .footer-column a { color: var(--secondary-color); text-decoration: none; transition: color 0.3s ease; }
+    .footer-column a:hover { color: var(--primary-color); }
+
+    .social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
+    .social-icons a {
+      color: var(--white);
+      background-color: rgba(255,255,255,0.1);
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+    .social-icons a:hover { background-color: var(--primary-color); }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-variant-numeric: lining-nums;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .header-container { flex-direction: column; }
+      nav ul { margin-top: 1rem; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+      nav ul li { margin: 0; }
+      .hero { height: 70vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <a href="../index.html" class="logo"><img src="../images/SaumLogo.png" alt="SAUM"></a>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="../temples/index.html">Temple Tourism</a>
+            <div class="dropdown-content">
+              <a href="../temples/ayodhya-varanasi/index.html">Ayodhya &amp; Varanasi Yatra</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="../special-trips/index.html">Special Trips</a>
+            <div class="dropdown-content">
+              <a href="../special-trips/pandal-hopping/index.html">Ganpati Pandal Hopping</a>
+            </div>
+          </li>
+          <li><a href="../about/index.html" class="active">About Us</a></li>
+          <li><a href="../contact/index.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>About Saum</h1>
+      <p>Born from devotion. Built for discerning pilgrims.</p>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image">
+          <img src="../images/OurStory.jpg" alt="Temple journey by Saum">
+        </div>
+        <div class="story-text">
+          <h2>Our Story</h2>
+          <div class="section-divider" style="margin: 0 0 1.5rem;"></div>
+          <p class="story-tagline">"We didn't find the journey we deserved — so we built it."</p>
+          <p>Like most Indian families, we grew up going on pilgrimages every year. We travelled to temples large and small across India – at different stages of life, for different reasons and seasons, with family, with friends, and sometimes on our own. These are among our fondest memories.</p>
+          <p>But in almost every pilgrimage, certain challenges were consistently present. The logistical chaos, the hotels that were very different from what their websites portrayed, the crowded temple queues with no guidance, even getting basic information about temple timings and puja bookings was a challenge.</p> 
+          <p>And sometimes it wasn't even us travelling - it was our parents and relatives, with us organising everything from a distance. We worried about their safety and comfort, whether touts were taking them for a ride, if they were having hygienic food, and most importantly - what could we do if there was a medical emergency?</p>
+          <p>We kept coming back to one question: what if someone who knew these temples deeply, had real relationships on the ground, and genuinely cared about the sanctity of pilgrimages, handled everything?</p>
+          <p>That question led us to create Saum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FOUNDERS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>The Founders</h2>
+        <div class="section-divider"></div>
+        <p>Two accomplished professionals driven by a shared reverence for India's sacred heritage and an uncompromising standard for guest experience.</p>
+      </div>
+
+      <div class="founders-grid">
+
+        <!-- Founder 1 -->
+        <div class="founder-card">
+          <img class="founder-photo" src="../images/MeghanaBangaloreProfile.jpg" alt="Founder 1">
+          <div class="founder-info">
+            <div class="founder-name">Meghana Bangalore</div>
+            <div class="founder-title">Co-Founder</div>
+            <p class="founder-bio">Meghana grew up in a family that has been in the business of distributing religious products for four generations, the company being one of the largest distributors of regulated sandalwood products in Mumbai with a legacy of over 95 years. She herself has been a communications professional with 18+ years of experience across startups, finance, and lifestyle - including stints at udaan and Ambit. She advises institutions like IIM Kozhikode and Marcellus Investment Managers on brand strategy.
+            <br><br> Meghana holds a BCom from Jai Hind College, a MCom from Mumbai University, and a PGDBA from KC College, Mumbai. At Saum, she brings together that rare combination of generational knowledge and professional rigour, ensuring that every journey is not just well-organised, but thoughtfully crafted for the discerning traveller.</p>
+          </div>
+        </div>
+
+        <!-- Founder 2 -->
+        <div class="founder-card">
+          <img class="founder-photo" src="../images/NihalKashinathProfile.jpg" alt="Founder 2">
+          <div class="founder-info">
+            <div class="founder-name">Nihal Kashinath</div>
+            <div class="founder-title">Co-Founder</div>
+            <p class="founder-bio">Nihal comes with over 20 years of leadership experience in IT and startups. Comfortable wearing multiple hats across strategy, technology, operations, and marketing, he has spent the last decade advising companies on AI and deep tech adoption. He has also helped startups navigate their 0 to 10 and 10 to 100 journeys. Nihal also founded Deep Tech Stars, one of India's most active AI developer communities - built from the ground up by bringing together tens of thousands of developers, practitioners, and researchers in AI, as well as partner organisations like Google, NVIDIA, Microsoft, Sarvam, GroupM, International Red Cross and more.
+            <br><br>Nihal holds a BE in Computer Science from RVCE Bangalore and an MBA from ISB Hyderabad. At Saum, he brings the same entrepreneurial energy and cross-functional versatility that has defined his career - now channelled towards not just building a pilgrimage experience that is seamless and trustworthy, but also an enduring community of spiritual seekers and travellers.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PHILOSOPHY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our Philosophy</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="philosophy-tree">
+
+        <svg class="tree-svg" viewBox="0 0 1000 1270" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- S-curve spine (±150px oscillation) -->
+          <path d="M 500 0 C 350 160, 650 270, 500 430 C 350 590, 650 700, 500 860 C 350 1020, 650 1130, 500 1270"
+                fill="none" stroke="#c9b18c" stroke-width="2.5" opacity="0.6"/>
+
+          <!-- Anchor dots — solved at equal y-intervals of ~182px -->
+          <circle cx="482" cy="181" r="6" fill="#c9b18c"/>
+          <circle cx="540" cy="363" r="6" fill="#c9b18c"/>
+          <circle cx="458" cy="544" r="6" fill="#c9b18c"/>
+          <circle cx="538" cy="726" r="6" fill="#c9b18c"/>
+          <circle cx="468" cy="907" r="6" fill="#c9b18c"/>
+          <circle cx="510" cy="1089" r="6" fill="#c9b18c"/>
+
+          <!-- Left connector ticks (anchors 1, 3, 5) -->
+          <line x1="482" y1="181" x2="385" y2="181" stroke="#c9b18c" stroke-width="1.5" opacity="0.6"/>
+          <line x1="458" y1="544" x2="385" y2="544" stroke="#c9b18c" stroke-width="1.5" opacity="0.6"/>
+          <line x1="468" y1="907" x2="385" y2="907" stroke="#c9b18c" stroke-width="1.5" opacity="0.6"/>
+
+          <!-- Right connector ticks (anchors 2, 4, 6) -->
+          <line x1="540" y1="363" x2="615" y2="363" stroke="#c9b18c" stroke-width="1.5" opacity="0.6"/>
+          <line x1="538" y1="726" x2="615" y2="726" stroke="#c9b18c" stroke-width="1.5" opacity="0.6"/>
+          <line x1="510" y1="1089" x2="615" y2="1089" stroke="#c9b18c" stroke-width="1.5" opacity="0.6"/>
+
+          <!-- Left endpoint dots (aligned with h3 titles) -->
+          <circle cx="385" cy="181" r="5" fill="#c9b18c" opacity="0.85"/>
+          <circle cx="385" cy="544" r="5" fill="#c9b18c" opacity="0.85"/>
+          <circle cx="385" cy="907" r="5" fill="#c9b18c" opacity="0.85"/>
+
+          <!-- Right endpoint dots (aligned with h3 titles) -->
+          <circle cx="615" cy="363" r="5" fill="#c9b18c" opacity="0.85"/>
+          <circle cx="615" cy="726" r="5" fill="#c9b18c" opacity="0.85"/>
+          <circle cx="615" cy="1089" r="5" fill="#c9b18c" opacity="0.85"/>
+
+        </svg>
+
+        <!-- Left: 1, 3, 5 — top = anchor_y - 13px -->
+        <div class="tree-point left" style="top: 168px;">
+          <h3>Sacred Journey</h3>
+          <p>We understand that a pilgrimage is not just any trip - it is a very important undertaking and often the fulfilment of a long-held intention. So we treat each trip with the utmost reverence.</p>
+        </div>
+
+        <div class="tree-point left" style="top: 531px;">
+          <h3>Guests, Not Customers</h3>
+          <p style="text-align: center;">
+            <i>mātṛdevo bhava</i> |<br>
+            <i>pitṛdevo bhava</i> |<br>
+            <i>āchāryadevo bhava</i> |<br>
+            <i>atithidevo bhava</i> ||<br>
+            <b>-Taittiriya Upanishad</b>
+          </p>
+          <p>We consider our guests as family. We'll go out of the way for anything that is important to you, just like we would for our own family.</p>
+        </div>
+
+        <div class="tree-point left" style="top: 894px;">
+          <h3>Devotion Deepens With Comfort</h3>
+          <p>When you are well-rested and unhurried, you arrive at the sanctum with calmness and focus. Let us remove the exhaustion and anxiety from your physical journey so that you can focus on your spiritual one.</p>
+        </div>
+
+        <!-- Right: 2, 4, 6 -->
+        <div class="tree-point right" style="top: 350px;">
+          <h3>Elders First</h3>
+          <p>When older parents or grandparents are travelling, their comfort, safety, and dignity shape every decision we make. The right activities at the right pace with the right support - all considered before you even have to ask.</p>
+        </div>
+
+        <div class="tree-point right" style="top: 713px;">
+          <h3>Personally Vetted</h3>
+          <p>Every hotel, every meal, every activity we suggest for you, we have hand-picked after experiencing them ourselves. And our standards are very high.</p>
+        </div>
+
+        <div class="tree-point right" style="top: 1076px;">
+          <h3>No Surprises</h3>
+          <p>If something changes, you will hear it from us first. We believe that a quick, honest call in a difficult moment is worth far more than silence followed by an apology.</p>
+        </div>
+
+      </div>
+
+      <p class="philosophy-closing">These are not principles we arrived at in a boardroom. These are simply what we would want for ourselves and our families. And that, more than anything, is why we started Saum.</p>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Begin Your Sacred Journey</h2>
+      <p>Let us take care of every detail so you can focus on what really matters.</p>
+      <div class="cta-btn-group">
+        <a href="../temples/index.html" class="btn">Explore Our Trips</a>
+        <a href="../contact/index.html" class="btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Saum</h3>
+          <p>At Saum, we are creating a world where spiritual discovery meets curated comfort. Learn more about our philosophy and our team <a href="../about/index.html" style="color: var(--primary-color); text-decoration: none;">here</a>.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../temples/index.html">Temple Tourism</a></li>
+            <li><a href="../products/index.html">Premium Products</a></li>
+            <li><a href="../special-trips/index.html">Special Trips</a></li>
+            <li><a href="../contact/index.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Policies</h3>
+          <ul>
+            <li><a href="../policies/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+            <li><a href="../policies/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../policies/refunds-cancellations.html">Refunds &amp; Cancellations</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Connect With Us</h3>
+          <p>Join our community for exclusive offers and spiritual insights.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/saumdotindia"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/saum.india"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@saumindia"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/saumindia"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/saum-in/"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 Saum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function adjustHeroOffset() {
+      const headerEl = document.querySelector('header');
+      const heroEl = document.querySelector('.hero');
+      if (!headerEl || !heroEl) return;
+      heroEl.style.marginTop = headerEl.offsetHeight + 'px';
+    }
+
+    window.addEventListener('load', adjustHeroOffset);
+    window.addEventListener('resize', adjustHeroOffset);
+    window.addEventListener('orientationchange', adjustHeroOffset);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(adjustHeroOffset);
+    }
+
+    function setupDropdowns() {
+      const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
+      dropdownLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const menu = this.parentElement.querySelector('.dropdown-content');
+          if (!menu) return;
+          const isMobile = window.matchMedia('(max-width: 768px)').matches;
+          if (isMobile) {
+            const isOpen = menu.classList.contains('show');
+            if (isOpen) { menu.classList.remove('show'); return; }
+            e.preventDefault();
+            e.stopPropagation();
+            document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+            menu.classList.add('show');
+          }
+        });
+      });
+
+      document.addEventListener('click', (ev) => {
+        if (!ev.target.closest('nav .dropdown')) {
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 768px)').matches) {
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+        }
+      });
+    }
+
+    setupDropdowns();
+
+    // Hide header on scroll-down, reveal on scroll-up
+    (function () {
+      const header = document.querySelector('header');
+      let lastScrollY = window.scrollY;
+      const THRESHOLD = 8; // px — ignore tiny jitter
+
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        const diff = currentScrollY - lastScrollY;
+
+        if (diff > THRESHOLD) {
+          // Scrolling down — hide
+          header.classList.add('header-hidden');
+          // Close any open dropdowns so they don't linger
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+        } else if (diff < -THRESHOLD) {
+          // Scrolling up — reveal
+          header.classList.remove('header-hidden');
+        }
+
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>

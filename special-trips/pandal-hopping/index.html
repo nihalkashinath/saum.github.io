@@ -108,6 +108,11 @@
       width: 100%;
       top: 0;
       z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    header.header-hidden {
+      transform: translateY(-100%);
     }
     
     .header-container {
@@ -459,6 +464,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 2rem;
     }
     
     .footer-column {
@@ -518,6 +524,7 @@
       padding-top: 2rem;
       margin-top: 2rem;
       border-top: 1px solid rgba(255,255,255,0.1);
+      font-variant-numeric: lining-nums;
     }
     
     /* Responsive */
@@ -564,29 +571,20 @@
       <a href="../../index.html" class="logo"><img src="../../images/SaumLogo.png" alt="SAUM"></a>
       <nav>
         <ul>
-          <li><a href="../../index.html">Home</a></li>
           <li class="dropdown">
             <a href="../../temples/index.html">Temple Tourism</a>
             <div class="dropdown-content">
               <a href="../../temples/ayodhya-varanasi/index.html">Ayodhya & Varanasi Yatra</a>
             </div>
           </li>
-          <li><a href="../../products/index.html">Premium Products</a></li>
           <li class="dropdown">
             <a href="../index.html" class="active">Special Trips</a>
             <div class="dropdown-content">
               <a href="index.html">Ganpati Pandal Hopping</a>
             </div>
           </li>
+          <li><a href="../../about/index.html">About Us</a></li>
           <li><a href="../../contact/index.html">Contact Us</a></li>
-          <li class="dropdown">
-            <a href="../../policies/terms-and-conditions.html">Policies</a>
-            <div class="dropdown-content">
-              <a href="../../policies/terms-and-conditions.html">Terms &amp; Conditions</a>
-              <a href="../../policies/privacy-policy.html">Privacy Policy</a>
-              <a href="../../policies/refunds-cancellations.html">Refunds &amp; Cancellations</a>
-            </div>
-          </li>
         </ul>
       </nav>
     </div>
@@ -611,7 +609,7 @@
          <a href="http://wa.me/9819120245?text=Hi,%20I%E2%80%99m%20interested%20in%20joining%20the%20Mumbai%20Ganpati%20Pandal%20Hopping%20experience.%20Please%20share%20more%20details." class="btn" style="margin-left: 1rem;" target="_blank">Chat with Us on WhatsApp</a>             
          <p style="font-size: 1.1rem; margin-bottom: 2rem;">
            <strong>
-             *This trip is next available in 2026. 
+             *This trip is next available in September 2026. 
              <a href="https://drive.google.com/file/d/1RK8SYC-HVsuW03h0qmRIwmIuuhKn7QVy/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: underline;">Terms &amp; Conditions</a>
               apply.
            </strong>
@@ -840,7 +838,7 @@
          <a href="http://wa.me/9819120245?text=Hi,%20I%E2%80%99m%20interested%20in%20joining%20the%20Mumbai%20Ganpati%20Pandal%20Hopping%20experience.%20Please%20share%20more%20details." class="btn" style="margin-left: 1rem;" target="_blank">Chat with Us on WhatsApp</a>
          <p style="font-size: 1.1rem; margin-bottom: 2rem;">
           <strong>
-            *This trip is next available in 2026. 
+            *This trip is next available in September 2026. 
             <a href="https://drive.google.com/file/d/1RK8SYC-HVsuW03h0qmRIwmIuuhKn7QVy/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: underline;">Terms &amp; Conditions</a>
              apply.
           </strong>
@@ -1027,7 +1025,7 @@
           <div class="accordion-content">
             <div class="faq-item">
               <div class="faq-question">Q: What are the exact travel dates?</div>
-              <div class="faq-answer">A: [Insert specific dates]. The itinerary is designed around optimal darshan timings, including early morning access to avoid peak crowds.</div>
+              <div class="faq-answer">A: Specific dates will be announced in late August 2026. The itinerary is designed around optimal darshan timings, including early morning access to avoid peak crowds.</div>
             </div>
             
             <div class="faq-item">
@@ -1167,7 +1165,7 @@
          <a href="http://wa.me/9819120245?text=Hi,%20I%E2%80%99m%20interested%20in%20joining%20the%20Mumbai%20Ganpati%20Pandal%20Hopping%20experience.%20Please%20share%20more%20details." class="btn" style="margin-left: 1rem;" target="_blank">Chat with Us on WhatsApp</a>
          <p style="font-size: 1.1rem; margin-bottom: 2rem;">
           <strong>
-            *This trip is next available in 2026. 
+            *This trip is next available in September 2026. 
             <a href="https://drive.google.com/file/d/1RK8SYC-HVsuW03h0qmRIwmIuuhKn7QVy/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: underline;">Terms &amp; Conditions</a>
              apply.
           </strong>
@@ -1182,7 +1180,7 @@
       <div class="footer-content">
         <div class="footer-column">
           <h3>About Saum</h3>
-          <p>At Saum, we invite you to step into a world where spiritual discovery meets curated comfort.</p>
+          <p>At Saum, we are creating a world where spiritual discovery meets curated comfort. Learn more about our philosophy and our team <a href="../../about/index.html" style="color: var(--primary-color); text-decoration: none;">here</a>.</p>
         </div>
         
         <div class="footer-column">
@@ -1219,7 +1217,7 @@
       </div>
       
       <div class="copyright">
-        <p>&copy; 2025 Saum. All rights reserved.</p>
+        <p>&copy; 2026 Saum. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -1315,6 +1313,24 @@
     }
 
     setupDropdowns();
+
+    (function () {
+      const header = document.querySelector('header');
+      let lastScrollY = window.scrollY;
+      const THRESHOLD = 8;
+
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        const diff = currentScrollY - lastScrollY;
+        if (diff > THRESHOLD) {
+          header.classList.add('header-hidden');
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+        } else if (diff < -THRESHOLD) {
+          header.classList.remove('header-hidden');
+        }
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html> 
