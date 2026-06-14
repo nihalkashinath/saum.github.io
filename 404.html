@@ -58,6 +58,11 @@
       letter-spacing: 1px;
       margin-bottom: 1rem;
     }
+
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
     
     .container {
       max-width: 1200px;
@@ -95,6 +100,11 @@
       width: 100%;
       top: 0;
       z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    header.header-hidden {
+      transform: translateY(-100%);
     }
     
     .header-container {
@@ -217,6 +227,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 2rem;
     }
     
     .footer-column {
@@ -253,8 +264,31 @@
       padding-top: 2rem;
       margin-top: 2rem;
       border-top: 1px solid rgba(255,255,255,0.1);
+      font-variant-numeric: lining-nums;
     }
     
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      color: var(--white);
+      background-color: rgba(255,255,255,0.1);
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--primary-color);
+    }
+
     /* Mobile dropdown overrides */
     @media (max-width: 768px) {
       .dropdown:hover .dropdown-content {
@@ -309,29 +343,20 @@
       <a href="/index.html" class="logo"><img src="/images/SaumLogo.png" alt="SAUM"></a>
       <nav>
         <ul>
-          <li><a href="/index.html">Home</a></li>
           <li class="dropdown">
             <a href="/temples/index.html">Temple Tourism</a>
             <div class="dropdown-content">
               <a href="/temples/ayodhya-varanasi/index.html">Ayodhya & Varanasi Yatra</a>
             </div>
           </li>
-          <li><a href="/products/index.html">Premium Products</a></li>
           <li class="dropdown">
             <a href="/special-trips/index.html">Special Trips</a>
             <div class="dropdown-content">
               <a href="/special-trips/pandal-hopping/index.html">Ganpati Pandal Hopping</a>
             </div>
           </li>
+          <li><a href="/about/index.html">About Us</a></li>
           <li><a href="/contact/index.html">Contact Us</a></li>
-          <li class="dropdown">
-            <a href="#">Policies</a>
-            <div class="dropdown-content">
-              <a href="/policies/terms-and-conditions.html">Terms &amp; Conditions</a>
-              <a href="/policies/privacy-policy.html">Privacy Policy</a>
-              <a href="/policies/refunds-cancellations.html">Refunds &amp; Cancellations</a>
-            </div>
-          </li>
         </ul>
       </nav>
     </div>
@@ -351,7 +376,7 @@
       <div class="footer-content">
         <div class="footer-column">
           <h3>About Saum</h3>
-          <p>At Saum, we invite you to step into a world where spiritual discovery meets curated comfort.</p>
+          <p>At Saum, we are creating a world where spiritual discovery meets curated comfort. Learn more about our philosophy and our team <a href="/about/index.html" style="color: var(--primary-color); text-decoration: none;">here</a>.</p>
         </div>
         
         <div class="footer-column">
@@ -388,7 +413,7 @@
       </div>
       
       <div class="copyright">
-        <p>&copy; 2025 Saum. All rights reserved.</p>
+        <p>&copy; 2026 Saum. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -448,6 +473,24 @@
     }
 
     setupDropdowns();
+
+    (function () {
+      const header = document.querySelector('header');
+      let lastScrollY = window.scrollY;
+      const THRESHOLD = 8;
+
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        const diff = currentScrollY - lastScrollY;
+        if (diff > THRESHOLD) {
+          header.classList.add('header-hidden');
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+        } else if (diff < -THRESHOLD) {
+          header.classList.remove('header-hidden');
+        }
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html> 
