@@ -264,7 +264,10 @@
       padding: 0 2rem;
     }
 
-    .hero h1, .hero h2, .hero h3, .hero h4 { color: var(--white); }
+    .hero :is(h1, h2, h3, h4, p),
+    .cta-section :is(h1, h2, h3, h4, p) {
+      color: var(--white);
+    }
 
 
     
@@ -434,9 +437,6 @@
       .hero {
         height: 60vh;
       }
-
-    .hero h1, .hero h2, .hero h3, .hero h4 { color: var(--white); }
-
 
       
       .hero h2 {

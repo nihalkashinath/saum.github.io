@@ -218,7 +218,10 @@
       max-width: 760px;
     }
 
-    .hero h1, .hero h2, .hero h3, .hero h4 { color: var(--white); }
+    .hero :is(h1, h2, h3, h4, p),
+    .cta-section :is(h1, h2, h3, h4, p) {
+      color: var(--white);
+    }
 
     .hero h2 {
       font-size: clamp(1.8rem, 6vw, 3rem);

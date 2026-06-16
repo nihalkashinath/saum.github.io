@@ -272,7 +272,6 @@
     
     .hero h1 {
       font-size: clamp(1.6rem, 6.5vw, 2.5rem);
-      color: var(--white);
       margin-bottom: 1rem;
       line-height: 1.2;
     }
@@ -280,6 +279,11 @@
     .hero p {
       font-size: clamp(1rem, 3.6vw, 1.2rem);
       margin-bottom: 2rem;
+    }
+
+    .hero :is(h1, h2, h3, h4, p),
+    .cta-section :is(h1, h2, h3, h4, p) {
+      color: var(--white);
     }
     
     /* Section Styles */
