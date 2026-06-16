@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -41,8 +41,12 @@
     :root {
       --primary-color: #c9b18c;
       --secondary-color: #f5f0e6;
-      --text-color: #3a3a3a;
-      --accent-color: #8a754d;
+      --text-color: #1e1e1e;
+      --heading-color: #111111;
+      --accent-color: #4a3c24;
+      --button-bg: #7a6344;
+      --button-hover-bg: #4a3c24;
+      --footer-bg: #3a3a3a;
       --light-bg: #faf7f2;
       --white: #ffffff;
       --light-beige: #fdfbf7;
@@ -64,7 +68,8 @@
     }
 
     h1, h2, h3, h4 {
-      font-weight: 300;
+      font-weight: 400;
+      color: var(--heading-color);
       letter-spacing: 1px;
       margin-bottom: 1rem;
     }
@@ -83,7 +88,7 @@
 
     .btn {
       display: inline-block;
-      background-color: var(--primary-color);
+      background-color: var(--button-bg);
       color: var(--white);
       padding: 0.8rem 1.5rem;
       border: none;
@@ -99,7 +104,7 @@
     }
 
     .btn:hover {
-      background-color: var(--accent-color);
+      background-color: var(--button-hover-bg);
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
@@ -220,6 +225,8 @@
 
     .hero-content { max-width: 800px; padding: 0 2rem; }
 
+    .hero h1, .hero h2, .hero h3, .hero h4 { color: var(--white); }
+
     .hero h2 { font-size: clamp(1.8rem, 6vw, 3rem); line-height: 1.2; margin-bottom: 1.5rem; }
     .hero p { font-size: clamp(1rem, 3.8vw, 1.3rem); margin-bottom: 2rem; }
 
@@ -268,7 +275,7 @@
     }
 
     .itinerary-day h3 {
-      color: var(--primary-color);
+      color: var(--accent-color);
       border-bottom: 2px solid var(--primary-color);
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
@@ -358,6 +365,10 @@
 
     .inclusion-item p:last-child { margin-bottom: 0; }
 
+    .exclusion-mark {
+      color: red;
+    }
+
     /* Accordion */
     .accordion { margin: 2rem 0; }
 
@@ -429,7 +440,7 @@
 
     /* Footer */
     footer {
-      background-color: var(--text-color);
+      background-color: var(--footer-bg);
       color: var(--white);
       padding: 3rem 0;
     }
@@ -528,8 +539,8 @@
           <li class="dropdown">
             <a href="../index.html" class="active">Special Trips</a>
             <div class="dropdown-content">
-              <a href="../pandal-hopping/index.html">Ganpati Pandal Hopping</a>
               <a href="index.html">Jagannath Rath Yatra</a>
+              <a href="../pandal-hopping/index.html">Ganpati Pandal Hopping</a>
             </div>
           </li>
           <li><a href="../../about/index.html">About Us</a></li>
@@ -555,7 +566,7 @@
       </div>
 
       <div style="text-align: center; margin-bottom: 3rem;">
-        <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Experience the sacred energy of Puri, the eternal Purushottam Dham, during Rath Yatra - one of India's grandest living spiritual celebrations honouring Lord Sri Krishna. In this immersive 4-day journey, witness the awe-inspiring Rath Yatra procession from a royal VIP viewing space, with guided temple visits, a heritage walk, Mahaprasad, and complete on-ground support.</p>
+        <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Experience the sacred energy of Puri, the eternal Purushottam Dham, during Rath Yatra - one of India's grandest spiritual celebrations honouring Lord Sri Krishna. In this immersive 4-day journey, witness the awe-inspiring Rath Yatra procession from a royal VIP viewing space, with guided temple visits, a heritage walk, Mahaprasad, and complete on-ground support.</p>
         <a href="../../contact/index.html" class="btn">Contact Us to Plan Your Trip*</a>
         <a href="http://wa.me/9902930443?text=Hi,%20I%E2%80%99m%20interested%20in%20the%20Jagannath%20Rath%20Yatra%20trip.%20Please%20share%20more%20details." class="btn" style="margin-left: 1rem;" target="_blank">Chat with Us on WhatsApp</a>
         <p style="font-size: 1.1rem; margin-top: 1rem;">
@@ -597,7 +608,7 @@
         <div class="feature">
           <i class="fas fa-sun"></i>
           <h3>Konark Sun Temple &amp; Beach</h3>
-          <p>A scenic drive to the UNESCO World Heritage Konark Sun Temple and the serene Chandrabhaga Beach.</p>
+          <p>A visit to the UNESCO World Heritage Konark Sun Temple and the serene Chandrabhaga Beach.</p>
         </div>
 
         <div class="feature">
@@ -618,7 +629,7 @@
 
       <!-- Day 1 -->
       <div class="itinerary-day">
-        <h3>🛕 Day 1 · July 15: Bhubaneswar Temples, Raghurajpur &amp; Puri</h3>
+        <h3>Day 1 · July 15: Bhubaneswar Temples, Raghurajpur &amp; Puri</h3>
 
         <div class="timeline-item">
           <div class="time">Morning</div>
@@ -687,7 +698,7 @@
 
       <!-- Day 2 -->
       <div class="itinerary-day">
-        <h3>🎡 Day 2 · July 16: Rath Yatra VIP Experience</h3>
+        <h3>Day 2 · July 16: Rath Yatra VIP Experience</h3>
 
         <div class="timeline-item">
           <div class="time">Early AM</div>
@@ -732,7 +743,7 @@
 
       <!-- Day 3 -->
       <div class="itinerary-day">
-        <h3>🪔 Day 3 · July 17: Gundicha Temple, Jagannath Parikrama &amp; Mela</h3>
+        <h3>Day 3 · July 17: Gundicha Temple, Jagannath Parikrama &amp; Mela</h3>
 
         <div class="timeline-item">
           <div class="time">Morning</div>
@@ -778,13 +789,13 @@
 
       <!-- Day 4 -->
       <div class="itinerary-day">
-        <h3>🌅 Day 4 · July 18: Konark, Chandrabhaga &amp; Departure</h3>
+        <h3>Day 4 · July 18: Konark, Chandrabhaga &amp; Departure</h3>
 
         <div class="timeline-item">
           <div class="time">Morning</div>
           <div class="location">
             <h4>Breakfast &amp; Checkout</h4>
-            <p>Final breakfast at the hotel. Checkout by 9 AM and prepare for the scenic return journey.</p>
+            <p>Breakfast at the hotel. Checkout by 9 AM and prepare for the scenic return journey.</p>
           </div>
         </div>
 
@@ -889,10 +900,10 @@
         <div style="margin-top: 2rem;">
           <h3>What's Not Included</h3>
           <ul style="list-style: none; margin-top: 1rem;">
-            <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--secondary-color);">✗ &nbsp; Travel to/from Bhubaneswar (airfare or train tickets)</li>
-            <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--secondary-color);">✗ &nbsp; Personal expenses, shopping, laundry, and any beverages not mentioned</li>
-            <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--secondary-color);">✗ &nbsp; Any meals or activities not specified in the itinerary</li>
-            <li style="padding: 0.4rem 0;">✗ &nbsp; Costs arising from delays, accessibility restrictions, or changes due to crowd/security advisories</li>
+            <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--secondary-color);"><span class="exclusion-mark">✗</span> &nbsp; Travel to/from Bhubaneswar (airfare or train tickets)</li>
+            <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--secondary-color);"><span class="exclusion-mark">✗</span> &nbsp; Personal expenses, shopping, laundry, and any beverages not mentioned</li>
+            <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--secondary-color);"><span class="exclusion-mark">✗</span> &nbsp; Any meals or activities not specified in the itinerary</li>
+            <li style="padding: 0.4rem 0;"><span class="exclusion-mark">✗</span> &nbsp; Costs arising from delays, accessibility restrictions, or changes due to crowd/security advisories</li>
           </ul>
         </div>
 

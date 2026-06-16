@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -44,8 +44,12 @@
     :root {
       --primary-color: #c9b18c;
       --secondary-color: #f5f0e6;
-      --text-color: #3a3a3a;
-      --accent-color: #8a754d;
+      --text-color: #1e1e1e;
+      --heading-color: #111111;
+      --accent-color: #4a3c24;
+      --button-bg: #7a6344;
+      --button-hover-bg: #4a3c24;
+      --footer-bg: #3a3a3a;
       --light-bg: #faf7f2;
       --white: #ffffff;
       --dark-overlay: rgba(0, 0, 0, 0.25);
@@ -70,7 +74,8 @@
     }
 
     h1, h2, h3 {
-      font-weight: 300;
+      font-weight: 400;
+      color: var(--heading-color);
       letter-spacing: 1px;
       margin-bottom: 1rem;
     }
@@ -213,7 +218,8 @@
       max-width: 760px;
     }
 
-    .hero h1,
+    .hero h1, .hero h2, .hero h3, .hero h4 { color: var(--white); }
+
     .hero h2 {
       font-size: clamp(1.8rem, 6vw, 3rem);
       line-height: 1.2;
@@ -228,7 +234,7 @@
 
     .btn {
       display: inline-block;
-      background: var(--primary-color);
+      background: var(--button-bg);
       color: var(--white);
       padding: 0.9rem 1.8rem;
       border-radius: 4px;
@@ -238,6 +244,7 @@
     }
 
     .btn:hover {
+      background: var(--button-hover-bg);
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
@@ -478,7 +485,7 @@
     }
 
     footer {
-      background-color: var(--text-color);
+      background-color: var(--footer-bg);
       color: var(--white);
       padding: 3rem 0;
       margin-top: 2rem;
@@ -647,8 +654,8 @@
           <li class="dropdown">
             <a href="../../special-trips/index.html">Special Trips</a>
             <div class="dropdown-content">
-              <a href="../../special-trips/pandal-hopping/index.html">Ganpati Pandal Hopping</a>
               <a href="../../special-trips/rath-yatra/index.html">Jagannath Rath Yatra</a>
+              <a href="../../special-trips/pandal-hopping/index.html">Ganpati Pandal Hopping</a>
             </div>
           </li>
           <li><a href="../../about/index.html">About Us</a></li>
