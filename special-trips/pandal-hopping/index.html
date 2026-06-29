@@ -323,7 +323,120 @@
       color: var(--accent-color);
       margin-bottom: 0.5rem;
     }
-    
+
+    /* Itinerary gate overlay */
+    .itinerary-locked {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .itinerary-locked .itinerary-day {
+      margin-bottom: 0;
+    }
+
+    .itinerary-locked .itinerary-preview {
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 100%);
+    }
+
+    .itinerary-locked.is-unlocked .itinerary-day {
+      margin-bottom: 2rem;
+    }
+
+    .itinerary-locked.is-unlocked .itinerary-preview {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    .itinerary-gate {
+      position: relative;
+      z-index: 2;
+      margin-top: -11rem;
+      padding: 0 0.5rem 0.5rem;
+    }
+
+    .itinerary-gate-panel {
+      max-width: 520px;
+      margin: 0 auto;
+      background-color: var(--white);
+      border-radius: 10px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+      border: 1px solid rgba(201, 177, 140, 0.35);
+    }
+
+    .itinerary-gate-copy {
+      text-align: center;
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      color: var(--heading-color);
+      line-height: 1.5;
+    }
+
+    .itinerary-gate-form .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .itinerary-gate-form .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .itinerary-gate-form .form-group input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: var(--white);
+    }
+
+    .itinerary-gate-form .optional-label {
+      color: #666;
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    .itinerary-gate-form .consent-checkbox {
+      margin: 1.25rem 0;
+      text-align: left;
+    }
+
+    .itinerary-gate-form .consent-checkbox input[type="checkbox"] {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .itinerary-gate-form .consent-checkbox label {
+      display: inline;
+      font-size: 0.95rem;
+      font-weight: 400;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    .itinerary-gate-form .form-submit {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .itinerary-gate-form .form-submit .btn {
+      margin: 0;
+      min-width: 220px;
+    }
+
+    #itinerary-preview-last {
+      scroll-margin-top: 6rem;
+    }
+
+    .itinerary-gated[hidden],
+    .itinerary-full[hidden],
+    .itinerary-gate[hidden] {
+      display: none !important;
+    }
+
     /* Package Details */
     .package-details {
       background-color: var(--white);
@@ -568,6 +681,9 @@
         display: block;
         margin-left: 0 !important; /* Override any inline margin-left */
       }
+      .itinerary-gate { margin-top: -9rem; padding: 0; }
+      .itinerary-gate-panel { padding: 1.5rem 1.25rem; }
+      .itinerary-gate-form .form-submit .btn { min-width: 100%; }
     }
   </style>
   
@@ -679,9 +795,12 @@
         <h2>Detailed Itinerary</h2>
       </div>
       
+      <div id="itinerary-locked" class="itinerary-locked">
       <div class="itinerary-day">
-        <h3>Day 1: City Pandals & Evening Temple Darshan</h3>
-        
+        <h3>Day 1: City Pandals &amp; Evening Temple Darshan</h3>
+
+        <div class="itinerary-preview">
+
         <div class="timeline-item">
           <div class="time">1:30 PM</div>
           <div class="location">
@@ -689,7 +808,7 @@
             <p>Depart from your South Mumbai hotel for a spiritual adventure through the city's heritage pandals.</p>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="time">2:00 PM</div>
           <div class="location">
@@ -698,8 +817,8 @@
             <p>A beautifully maintained pandal near iconic Churchgate Station, offering a tranquil start to your darshan journey. Perfect for early arrival with no long queues.</p>
           </div>
         </div>
-        
-        <div class="timeline-item">
+
+        <div class="timeline-item" id="itinerary-preview-last">
           <div class="time">2:30 PM</div>
           <div class="location">
             <h4>Fashion Street Ganpati 📍</h4>
@@ -707,7 +826,44 @@
             <p>A vibrant and colourful pandal on the bustling shopping street, radiating youthful energy. Ideal for photographs and experiencing the street-side festive atmosphere.</p>
           </div>
         </div>
-        
+
+        </div><!-- /itinerary-preview -->
+
+      <div id="itinerary-gate" class="itinerary-gate">
+        <div class="itinerary-gate-panel">
+        <p class="itinerary-gate-copy">Fill in these details to view the complete 2-day Pandal Hopping itinerary.</p>
+        <form id="itineraryUnlockForm" class="itinerary-gate-form" onsubmit="submitItineraryUnlock(event)">
+          <input type="hidden" name="entry.415658475" value="Ganpati Pandal Hopping">
+          <input type="hidden" name="entry.1160932882" value="Requested full Ganpati Pandal Hopping itinerary from website">
+          <div class="form-group">
+            <label for="pandal-itinerary-name">Name*</label>
+            <input type="text" id="pandal-itinerary-name" name="entry.2050509957" required>
+          </div>
+          <div class="form-group">
+            <label for="pandal-itinerary-city">City*</label>
+            <input type="text" id="pandal-itinerary-city" name="entry.2014457755" required>
+          </div>
+          <div class="form-group">
+            <label for="pandal-itinerary-phone">Phone*</label>
+            <input type="tel" id="pandal-itinerary-phone" name="entry.1854073633" required>
+          </div>
+          <div class="form-group">
+            <label for="pandal-itinerary-email">Email <span class="optional-label">(optional)</span></label>
+            <input type="email" id="pandal-itinerary-email" name="entry.735752030">
+          </div>
+          <div class="consent-checkbox">
+            <input type="checkbox" id="pandal-itinerary-consent" name="entry.132278656" value="Yes" required>
+            <label for="pandal-itinerary-consent">By submitting this, I agree to receive communication from Saum</label>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn">Submit To View Full Itinerary</button>
+          </div>
+        </form>
+        </div>
+      </div>
+
+      <div id="itinerary-gated-day1" class="itinerary-gated" hidden>
+
         <div class="timeline-item">
           <div class="time">3:00 PM</div>
           <div class="location">
@@ -770,8 +926,13 @@
             <p>Experience this legendary temple (founded in 1801), one of India's most iconic Ganesha shrines. Known for its gold-plated sanctum and the belief that Lord Ganesha, with the trunk on the right side, grants devotees' deepest wishes. The night visit provides a unique darshan of the closing ceremony puja.</p>
           </div>
         </div>
-      </div>
-      
+
+      </div><!-- /itinerary-gated-day1 -->
+      </div><!-- /itinerary-day -->
+      </div><!-- /itinerary-locked -->
+
+      <div id="itinerary-full" class="itinerary-full" hidden>
+
       <div class="itinerary-day">
         <h3>Day 2: Dawn with the Divine - Iconic Pandals</h3>
         
@@ -857,6 +1018,8 @@
           </strong>
         </p>
        </div>
+
+      </div><!-- /itinerary-full -->
     </div>
   </section>
 
@@ -1253,6 +1416,69 @@
         content.classList.add('active');
         header.classList.add('active');
       }
+    }
+
+    const ITINERARY_UNLOCK_KEY = 'saum_pandalHopping_itinerary_unlock';
+    const ITINERARY_UNLOCK_DAYS = 90;
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdmQdzwvApt4Zp7tUEuxuV2HZy8Bv_596oIBawcscnU6LZJjw/formResponse';
+
+    function isItineraryUnlocked() {
+      const raw = localStorage.getItem(ITINERARY_UNLOCK_KEY);
+      if (!raw) return false;
+      try {
+        const { unlockedAt } = JSON.parse(raw);
+        const maxAge = ITINERARY_UNLOCK_DAYS * 24 * 60 * 60 * 1000;
+        return Date.now() - unlockedAt < maxAge;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function unlockItinerary(scroll) {
+      const locked = document.getElementById('itinerary-locked');
+      const gate = document.getElementById('itinerary-gate');
+      const gatedDay1 = document.getElementById('itinerary-gated-day1');
+      const full = document.getElementById('itinerary-full');
+      if (gate) gate.hidden = true;
+      if (locked) locked.classList.add('is-unlocked');
+      if (gatedDay1) gatedDay1.hidden = false;
+      if (full) full.hidden = false;
+      if (scroll) {
+        const scrollTarget = document.getElementById('itinerary-preview-last');
+        if (scrollTarget) {
+          scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+
+    function submitItineraryUnlock(event) {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+
+      fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        body: new FormData(form),
+        mode: 'no-cors'
+      })
+      .then(() => {
+        localStorage.setItem(ITINERARY_UNLOCK_KEY, JSON.stringify({ unlockedAt: Date.now() }));
+        unlockItinerary(true);
+      })
+      .catch(() => {
+        alert('There was an error submitting the form. Please try again later.');
+      })
+      .finally(() => {
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+      });
+    }
+
+    if (isItineraryUnlocked()) {
+      unlockItinerary(false);
     }
 
     // Ensure hero is fully visible below the fixed header on all screen sizes
