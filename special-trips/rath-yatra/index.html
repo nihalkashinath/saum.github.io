@@ -55,6 +55,7 @@
       --white: #ffffff;
       --light-beige: #fdfbf7;
       --menu-active-color: #FF8C00;
+      --dark-overlay: rgba(0, 0, 0, 0.30);
     }
 
     * {
@@ -217,7 +218,7 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('../../images/RathYatraHero.webp') center/cover no-repeat;
+      background: linear-gradient(var(--dark-overlay), var(--dark-overlay)), url('../../images/RathYatraHero.webp') center/cover no-repeat;
       height: 90vh;
       display: flex;
       align-items: center;
@@ -235,6 +236,18 @@
     }
     .hero h2 { font-size: clamp(1.8rem, 6vw, 3rem); line-height: 1.2; margin-bottom: 1.5rem; }
     .hero p { font-size: clamp(1rem, 3.8vw, 1.3rem); margin-bottom: 2rem; }
+
+    .full-screen-image {
+      padding: 0;
+      width: 100%;
+      line-height: 0;
+    }
+
+    .full-screen-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     /* Sections */
     .section {
@@ -1004,6 +1017,10 @@
 
       </div><!-- /itinerary-full -->
     </div>
+  </section>
+
+  <section class="full-screen-image">
+    <img src="../../images/RathYatraKonarkSunTempleLarge.jpg" alt="Konark Sun Temple">
   </section>
 
   <!-- INCLUSIONS -->
