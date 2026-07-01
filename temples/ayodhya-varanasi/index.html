@@ -18,7 +18,7 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Ayodhya &amp; Varanasi Pilgrimage | Saum">
   <meta property="og:description" content="Curated darshans, evening aartis on the Sarayu &amp; Ganga, guided heritage walks, and premium concierge care.">
-  <meta property="og:image" content="https://www.saum.in/images/AyodhyaVaranasiLine.jpg">
+  <meta property="og:image" content="https://www.saum.in/images/AyodhyaVaranasiHero.jpg">
   <meta property="og:url" content="https://www.saum.in/temples/ayodhya-varanasi/">
   <meta property="og:type" content="website">
 
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ayodhya &amp; Varanasi Pilgrimage | Saum">
   <meta name="twitter:description" content="Witness Sarayu &amp; Ganga aartis, private temple access, and artisanal experiences handled by Saum.">
-  <meta name="twitter:image" content="https://www.saum.in/images/AyodhyaVaranasiLine.jpg">
+  <meta name="twitter:image" content="https://www.saum.in/images/AyodhyaVaranasiHeroo.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../../images/favicon-96x96.png" sizes="96x96" />
@@ -52,7 +52,7 @@
       --footer-bg: #3a3a3a;
       --light-bg: #faf7f2;
       --white: #ffffff;
-      --dark-overlay: rgba(0, 0, 0, 0.25);
+      --dark-overlay: rgba(0, 0, 0, 0.01);
     }
 
     * {
@@ -204,7 +204,7 @@
 
     .hero {
       height: 90vh;
-      background: linear-gradient(var(--dark-overlay), var(--dark-overlay)), url('../../images/AyodhyaVaranasiLine.jpg') center/cover no-repeat;
+      background: linear-gradient(var(--dark-overlay), var(--dark-overlay)), url('../../images/AyodhyaVaranasiHero.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -233,6 +233,18 @@
     .hero p {
       font-size: clamp(1.1rem, 3vw, 1.3rem);
       margin: 1.5rem 0 2rem;
+    }
+
+    .full-screen-image {
+      padding: 0;
+      width: 100%;
+      line-height: 0;
+    }
+
+    .full-screen-image img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .btn {
@@ -745,6 +757,10 @@
           </p>
         </div>
       </div>
+    </section>
+
+    <section class="full-screen-image">
+      <img src="../../images/AyodhyaVaranasiGangaArtiLarge.jpg" alt="Ganga Arti pilgrimage">
     </section>
 
     <section style="background: var(--secondary-color);">
