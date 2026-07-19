@@ -1,0 +1,12 @@
+title: Saum
+description: Luxury Pilgrimages
+url: "https://nihalkashinath.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+
+# Exclude files from Jekyll build
+exclude:
+  - Gemfile
+  - Gemfile.lock
