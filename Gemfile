@@ -6,4 +6,4 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.4"
 
-gem "wdm", "~> 0.2.0"
+gem "wdm", "~> 0.2.0", :platforms => [:windows]
