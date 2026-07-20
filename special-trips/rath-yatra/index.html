@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+---
+layout: default
+---
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -659,31 +662,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <header>
-    <div class="container header-container">
-      <a href="../../index.html" class="logo"><img src="../../images/SaumLogo.png" alt="SAUM"></a>
-      <nav>
-        <ul>
-          <li class="dropdown">
-            <a href="../../temples/index.html">Temple Tourism</a>
-            <div class="dropdown-content">
-              <a href="../../temples/ayodhya-varanasi/index.html">Ayodhya &amp; Varanasi Yatra</a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="../index.html" class="active">Special Trips</a>
-            <div class="dropdown-content">
-              <a href="index.html">Jagannath Rath Yatra</a>
-              <a href="../pandal-hopping/index.html">Ganpati Pandal Hopping</a>
-            </div>
-          </li>
-          <li><a href="../../about/index.html">About Us</a></li>
-          <li><a href="../../contact/index.html">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  {%- include header.html -%}
 
   <!-- HERO -->
   <section class="hero">
@@ -1315,52 +1294,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>About Saum</h3>
-          <p>At Saum, we are creating a world where spiritual discovery meets curated comfort. Learn more about our philosophy and our team <a href="../../about/index.html" style="color: var(--primary-color); text-decoration: none;">here</a>.</p>
-        </div>
-
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../temples/index.html">Temple Tourism</a></li>
-            <li><a href="../../products/index.html">Premium Products</a></li>
-            <li><a href="../index.html">Special Trips</a></li>
-            <li><a href="../../contact/index.html">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Policies</h3>
-          <ul>
-            <li><a href="../../policies/terms-and-conditions.html">Terms &amp; Conditions</a></li>
-            <li><a href="../../policies/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="../../policies/refunds-cancellations.html">Refunds &amp; Cancellations</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Connect With Us</h3>
-          <p>Join our community for exclusive offers and spiritual insights.</p>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/saumdotindia"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/saum.india"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@saumindia"><i class="fab fa-youtube"></i></a>
-            <a href="https://x.com/saumindia"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/company/saum-in/"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="copyright">
-        <p>&copy; 2026 Saum. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  {%- include footer.html -%}
 
   <script>
     function toggleAccordion(header) {

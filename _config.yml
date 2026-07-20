@@ -1,6 +1,6 @@
 title: Saum
 description: Luxury Pilgrimages
-url: "https://nihalkashinath.github.io"
+url: "https://www.saum.in"
 baseurl: ""
 
 # Build settings
@@ -10,3 +10,4 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
+  - RathYatraItinerary.pdf
