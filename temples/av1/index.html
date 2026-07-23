@@ -49,20 +49,25 @@ layout: default
 
     .btn {
       display: inline-block;
-      background: var(--button-bg);
+      background: #e07b00;
       color: var(--white);
       padding: 0.9rem 1.8rem;
       border-radius: 4px;
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
       font-size: 1rem;
       letter-spacing: 0.8px;
     }
 
     .btn:hover {
-      background: var(--button-hover-bg);
+      background: #b56200;
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Override global footer margin — no content above footer on this page */
+    body footer {
+      margin-top: 0;
     }
 
     @media (max-width: 768px) {
