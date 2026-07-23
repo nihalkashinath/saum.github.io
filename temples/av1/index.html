@@ -1,0 +1,155 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3PZ00SC5G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L3PZ00SC5G');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ayodhya &amp; Varanasi Yatra | Saum</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Saum" />
+  <link rel="manifest" href="/images/site.webmanifest" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+  <style>
+    /* Page-specific styles only — header/footer come from global.css */
+
+    .hero {
+      height: 90vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01)),
+                  url('/images/AyodhyaVaranasiHero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 2rem;
+    }
+
+    .hero-content {
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--button-bg);
+      color: var(--white);
+      padding: 0.9rem 1.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-size: 1rem;
+      letter-spacing: 0.8px;
+    }
+
+    .btn:hover {
+      background: var(--button-hover-bg);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  {%- include header.html -%}
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <a href="/assets/downloads/Varanasi_Ayodhya_Brochure.pdf" class="btn" download>Download Brochure</a>
+      </div>
+    </section>
+  </main>
+
+  {%- include footer.html -%}
+
+  <script>
+    function adjustHeroOffset() {
+      const headerEl = document.querySelector('header');
+      const heroEl = document.querySelector('.hero');
+      if (!headerEl || !heroEl) return;
+      heroEl.style.marginTop = headerEl.offsetHeight + 'px';
+    }
+
+    function setupDropdowns() {
+      const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
+      dropdownLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          const menu = this.parentElement.querySelector('.dropdown-content');
+          if (!menu) return;
+          const isMobile = window.matchMedia('(max-width: 768px)').matches;
+          if (isMobile) {
+            const isOpen = menu.classList.contains('show');
+            if (isOpen) { menu.classList.remove('show'); return; }
+            e.preventDefault();
+            e.stopPropagation();
+            document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+            menu.classList.add('show');
+          }
+        });
+      });
+
+      document.addEventListener('click', (ev) => {
+        if (!ev.target.closest('nav .dropdown')) {
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 768px)').matches) {
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+        }
+      });
+    }
+
+    window.addEventListener('load', adjustHeroOffset);
+    window.addEventListener('resize', adjustHeroOffset);
+    window.addEventListener('orientationchange', adjustHeroOffset);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(adjustHeroOffset);
+    }
+
+    setupDropdowns();
+
+    (function () {
+      const header = document.querySelector('header');
+      let lastScrollY = window.scrollY;
+      const THRESHOLD = 8;
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        const diff = currentScrollY - lastScrollY;
+        if (diff > THRESHOLD) {
+          header.classList.add('header-hidden');
+          document.querySelectorAll('nav .dropdown .dropdown-content').forEach(dc => dc.classList.remove('show'));
+        } else if (diff < -THRESHOLD) {
+          header.classList.remove('header-hidden');
+        }
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
