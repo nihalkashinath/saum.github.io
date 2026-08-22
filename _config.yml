@@ -6,8 +6,27 @@ baseurl: ""
 # Build settings
 markdown: kramdown
 
+# Blog settings
+permalink: /journal/:title/
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Nihal Kashinath"
+
+# Author information
+author:
+  name: "Nihal Kashinath"
+  title: "Co-Founder"
+  bio: "Nihal comes with over 20 years of leadership experience in IT and startups. Comfortable wearing multiple hats across strategy, technology, operations, and marketing, he has spent the last decade advising companies on AI and deep tech adoption. At Saum, he brings entrepreneurial energy and cross-functional versatility towards building a pilgrimage experience that is seamless and trustworthy."
+  photo: "/images/NihalKashinathProfile.jpg"
+
 # Exclude files from Jekyll build
 exclude:
   - Gemfile
   - Gemfile.lock
   - RathYatraItinerary.pdf
+  - Blog Strategy - V2.pdf
+  - _content-staging

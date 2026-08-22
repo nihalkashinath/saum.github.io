@@ -1,0 +1,343 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3PZ00SC5G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L3PZ00SC5G');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal | Saum</title>
+  <meta name="description" content="Insights, guides, and stories on premium temple travel and sacred journeys across India.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}/journal/">
+  <meta property="og:title" content="Journal | Saum">
+  <meta property="og:description" content="Insights, guides, and stories on premium temple travel and sacred journeys across India.">
+  <meta property="og:image" content="{{ site.url }}/images/SaumLogo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ site.url }}/journal/">
+  <meta property="twitter:title" content="Journal | Saum">
+  <meta property="twitter:description" content="Insights, guides, and stories on premium temple travel and sacred journeys across India.">
+  <meta property="twitter:image" content="{{ site.url }}/images/SaumLogo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Saum" />
+  <link rel="manifest" href="/images/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+  <style>
+    /* Journal Page Styles */
+    .journal-hero {
+      background: linear-gradient(to bottom, var(--secondary-color), transparent);
+      padding: 6rem 0 2rem;
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .journal-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+      color: var(--heading-color);
+      line-height: 1.2;
+    }
+
+    .journal-hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Search Bar */
+    .search-container {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 1rem 3.5rem 1rem 1rem;
+      border: 2px solid #e0d8cc;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+
+    .search-box button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: none;
+      border: none;
+      padding: 0 1.2rem;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .search-box button:hover {
+      color: var(--accent-color);
+    }
+
+    /* Articles Grid */
+    .articles-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .article-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .article-card .card-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #d8cfc3;
+      overflow: hidden;
+    }
+
+    .article-card .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .article-card .card-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card .card-meta {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.8rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .article-card .card-meta .divider {
+      color: #ccc;
+    }
+
+    .article-card .card-title {
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+      color: var(--heading-color);
+    }
+
+    .article-card .card-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-card .card-title a:hover {
+      color: var(--primary-color);
+    }
+
+    .article-card .card-excerpt {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .article-card .read-more {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap 0.2s;
+    }
+
+    .article-card .read-more:hover {
+      gap: 0.6rem;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-secondary);
+    }
+
+    .no-results h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--heading-color);
+    }
+
+    @media (max-width: 768px) {
+      .journal-hero {
+        padding: 3rem 0 1.5rem;
+        margin-top: 70px;
+      }
+
+      .journal-hero h1 {
+        font-size: 2rem;
+      }
+
+      .journal-hero p {
+        font-size: 1rem;
+        padding: 0 1.5rem;
+      }
+
+      .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  {%- include header.html -%}
+
+  <!-- Hero Section -->
+  <section class="journal-hero">
+    <div class="container">
+      <h1>Journal</h1>
+      <p>Insights, guides, and stories to help you experience India's sacred journeys with clarity and care.</p>
+    </div>
+  </section>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search articles..." autocomplete="off">
+      <button type="button" aria-label="Search"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+
+  <!-- Articles Grid -->
+  <div class="articles-container">
+    <div class="articles-grid" id="articlesGrid">
+      {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+      {% for post in sorted_posts %}
+      <article class="article-card" data-title="{{ post.title | downcase }}" data-excerpt="{{ post.excerpt | strip_html | downcase }}">
+        {% if post.featured_image %}
+        <div class="card-image">
+          <a href="{{ post.url }}">
+            <img src="{{ post.featured_image }}" alt="{{ post.title }}">
+          </a>
+        </div>
+        {% endif %}
+        <div class="card-content">
+          <div class="card-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            {% if post.reading_time %}<span class="divider">•</span>
+            <span>{{ post.reading_time }} min read</span>{% endif %}
+          </div>
+          <h2 class="card-title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </h2>
+          <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+          <a href="{{ post.url }}" class="read-more">Read article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    
+    <!-- No Results Message -->
+    <div class="no-results" id="noResults" style="display: none;">
+      <h2>No articles found</h2>
+      <p>Try adjusting your search or browse all articles above.</p>
+    </div>
+  </div>
+
+  <script>
+    // Simple client-side search
+    const searchInput = document.getElementById('searchInput');
+    const articlesGrid = document.getElementById('articlesGrid');
+    const noResults = document.getElementById('noResults');
+    const articleCards = articlesGrid.querySelectorAll('.article-card');
+
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      articleCards.forEach(card => {
+        const title = card.getAttribute('data-title');
+        const excerpt = card.getAttribute('data-excerpt');
+        
+        if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Show/hide no results message
+      if (visibleCount === 0 && searchTerm !== '') {
+        noResults.style.display = 'block';
+        articlesGrid.style.display = 'none';
+      } else {
+        noResults.style.display = 'none';
+        articlesGrid.style.display = 'grid';
+      }
+    });
+  </script>
+
+  {%- include footer.html -%}
+</body>
+</html>
