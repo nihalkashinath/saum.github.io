@@ -384,44 +384,6 @@ layout: default
       background: #1ea952;
     }
 
-    /* Author Bio */
-    .author-bio {
-      max-width: 750px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: var(--secondary-color);
-      border-radius: 8px;
-      display: flex;
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    .author-bio .author-photo-large {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .author-bio .author-details h4 {
-      font-size: 1.3rem;
-      margin-bottom: 0.3rem;
-      color: var(--accent-color);
-    }
-
-    .author-bio .author-details .author-title {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-    }
-
-    .author-bio .author-details p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-secondary);
-    }
-
     /* Related Articles */
     .related-articles {
       max-width: 1200px;
@@ -609,12 +571,6 @@ layout: default
         font-size: 1rem;
       }
 
-      .author-bio {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
       .article-cta .cta-buttons {
         flex-direction: column;
       }
@@ -690,16 +646,6 @@ layout: default
               <i class="fab fa-whatsapp"></i> Chat on WhatsApp
             </a>
             <a href="/contact/" class="btn-primary">Send an Enquiry</a>
-          </div>
-        </div>
-
-        <!-- Author Bio -->
-        <div class="author-bio">
-          <img src="{{ site.author.photo }}" alt="{{ page.author | default: site.author.name }}" class="author-photo-large">
-          <div class="author-details">
-            <h4>{{ page.author | default: site.author.name }}</h4>
-            <div class="author-title">{{ site.author.title }}</div>
-            <p>{{ site.author.bio }}</p>
           </div>
         </div>
       </article>
