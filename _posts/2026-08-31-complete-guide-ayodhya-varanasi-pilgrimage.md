@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "The Complete Guide to the Ayodhya & Varanasi Pilgrimage"
-date: 2026-09-01
-last_modified_at: 2026-09-01
+date: 2026-08-31
+last_modified_at: 2026-08-31
 author: "Nihal Kashinath"
 excerpt: "Everything you need to know to plan a meaningful, comfortable and unforgettable journey to two of India's most sacred destinations."
 featured_image: "/images/journal/ayodhya-varanasi-guide/AyodhyaVaranasiHero.jpg"
