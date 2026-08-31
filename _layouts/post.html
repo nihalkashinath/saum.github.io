@@ -198,8 +198,8 @@ layout: default
     .article-header {
       max-width: 750px;
       margin: 0 auto;
-      margin-top: 100px;
-      padding: 3rem 2rem 2rem;
+      padding: 1.5rem 2rem 2rem;
+      padding-top: 1.5rem;
       background: var(--white);
       position: relative;
       z-index: 1;
@@ -277,11 +277,6 @@ layout: default
       scroll-margin-top: 100px;
     }
 
-    .article-content h2:first-of-type {
-      border-top: none;
-      padding-top: 0;
-    }
-
     .article-content h3 {
       font-size: 1.4rem;
       margin: 2rem 0 0.8rem;
@@ -313,7 +308,7 @@ layout: default
       max-width: 100%;
       height: auto;
       border-radius: 6px;
-      margin: 2rem 0;
+      margin: 1rem 0 2rem 0;
     }
 
     /* Links in article content */
@@ -451,8 +446,8 @@ layout: default
     .breadcrumbs {
       max-width: 750px;
       margin: 0 auto;
-      margin-top: 100px;
       padding: 1rem 2rem 0;
+      padding-top: calc(100px + 1rem);
       font-size: 0.9rem;
       color: var(--text-secondary);
     }
@@ -563,7 +558,7 @@ layout: default
       display: block;
       font-size: 1.1rem;
       color: var(--primary-color);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
       font-style: normal;
     }
 
@@ -591,11 +586,15 @@ layout: default
       }
 
       .article-header {
-        margin-top: 80px;
+        padding-top: calc(90px + 1rem);
       }
 
       .breadcrumbs {
-        margin-top: 80px;
+        padding-top: calc(90px + 0.5rem);
+      }
+
+      .featured-image {
+        margin: 1.5rem 0;
       }
 
       .article-title {
