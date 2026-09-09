@@ -1,0 +1,447 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3PZ00SC5G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L3PZ00SC5G');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2085662732828700');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2085662732828700&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Connect With Saum</title>
+  <meta name="description" content="Share your details and the Saum team will contact you shortly.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Saum" />
+  <link rel="manifest" href="/images/site.webmanifest" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+  <link rel="stylesheet" href="/assets/css/global.css">
+
+  <style>
+    :root {
+      --cta-orange: #e07b00;
+      --cta-orange-hover: #b56200;
+      --form-bg: #fefcf8;
+      --header-h: 72px;
+      --text-secondary: #555;
+      --text-muted: #888;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    }
+
+    .lp-header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img { width: 110px; height: auto; }
+
+    .header-contacts {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .header-contacts a {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 1rem;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .header-contacts a:hover { color: var(--cta-orange); }
+    .header-contacts .icon { font-size: 1.1rem; }
+    .header-contacts .wa-icon { color: #25d366; }
+    .header-contacts .num { font-weight: 600; }
+
+    .page-main {
+      flex: 1;
+      margin-top: var(--header-h);
+      padding: 3.5rem 0 4rem;
+      background: var(--form-bg);
+    }
+
+    .form-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 2.4rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+      border-top: 3px solid var(--primary-color);
+    }
+
+    .form-title {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .form-subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--text-color);
+      letter-spacing: 0.3px;
+    }
+
+    .label-optional { font-weight: 400; color: var(--text-muted); }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid #d0c8bc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-color);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+
+    .form-group textarea { min-height: 100px; resize: vertical; }
+
+    .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .consent-row input[type="checkbox"] {
+      width: auto;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .consent-row label {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .btn-center { text-align: center; margin-top: 1.5rem; }
+
+    .btn-orange {
+      display: inline-block;
+      background: var(--cta-orange);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      min-width: 220px;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 1rem;
+      letter-spacing: 0.8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-orange:hover {
+      background: var(--cta-orange-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    .btn-orange:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .success-message {
+      display: none;
+      padding: 1.5rem;
+      background-color: #d4edda;
+      color: #155724;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+      text-align: center;
+      border: 1px solid #c3e6cb;
+    }
+
+    .success-message.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .cta-fallback {
+      text-align: center;
+      margin-top: 1.5rem;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .cta-fallback a {
+      color: var(--cta-orange);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    .lp-footer {
+      background: var(--footer-bg);
+      color: #ccc;
+      padding: 2rem 0;
+      margin-top: 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .lp-footer .footer-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .lp-footer .footer-contacts a {
+      color: #ccc;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .lp-footer .footer-contacts a:hover { color: var(--primary-color); }
+
+    .lp-footer .policy-links {
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .lp-footer .policy-links a {
+      color: #888;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+    .lp-footer .policy-links a:hover { color: var(--primary-color); }
+
+    .lp-footer .footer-copy {
+      margin-top: 1rem;
+      color: #666;
+      font-size: 0.8rem;
+      font-variant-numeric: lining-nums;
+    }
+
+    @media (max-width: 600px) {
+      :root { --header-h: 60px; }
+
+      .logo img { width: 90px; }
+      .header-contacts .num { display: none; }
+
+      .page-main { padding: 2rem 0 3rem; }
+      .container { padding: 0 1rem; }
+
+      .form-card { padding: 1.8rem 1.2rem; }
+      .form-title { font-size: 1.5rem; }
+
+      .lp-footer .footer-contacts { gap: 1rem; }
+      .lp-footer .policy-links { gap: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Header (matches /temples/av2) -->
+  <header>
+    <div class="container lp-header-inner">
+      <a href="/" class="logo"><img src="/images/SaumLogo.png" alt="Saum"></a>
+      <div class="header-contacts">
+        <a href="tel:+919902930443">
+          <i class="fas fa-phone icon"></i>
+          <span class="num">+91 99029 30443</span>
+        </a>
+        <a href="https://wa.me/+919902930443?text=Hi%2C%20could%20you%20please%20share%20details%20about%20the%20Ayodhya%20and%20Varanasi%20luxury%20pilgrimage%20by%20Saum%3F" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp icon wa-icon"></i>
+          <span class="num">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+      <div class="form-card">
+        <h1 class="form-title">Connect With Saum</h1>
+        <p class="form-subtitle">Please share your details below and our team will contact you shortly.</p>
+
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <input type="hidden" name="entry.2014457755" value="Seattle">
+          <input type="hidden" name="entry.415658475" value="Kashi Vishwanath">
+
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="entry.2050509957" required placeholder="Your full name" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone *</label>
+            <input type="tel" id="phone" name="entry.1854073633" required placeholder="+1 XXX XXX XXXX" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="label-optional">(optional)</span></label>
+            <input type="email" id="email" name="entry.735752030" placeholder="your@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="query">Your Query <span class="label-optional">(optional)</span></label>
+            <textarea id="query" name="entry.1160932882" placeholder="Please share any specific requirements or questions."></textarea>
+          </div>
+          <div class="consent-row">
+            <input type="checkbox" id="consent" name="entry.132278656" value="Yes" required title="Please check this box and permit us to contact you." oninvalid="this.setCustomValidity('Please check this box and permit us to contact you.')" onchange="this.setCustomValidity('')">
+            <label for="consent">By submitting this, I agree to receive communication from Saum</label>
+          </div>
+          <div class="btn-center">
+            <button type="submit" class="btn-orange">Submit</button>
+          </div>
+        </form>
+
+        <div class="success-message" id="success-message">
+          <p>Thank you for reaching out! Your message has been received, and we will contact you shortly.</p>
+        </div>
+      </div>
+
+      <p class="cta-fallback">Prefer to talk? <a href="tel:+919902930443">Call</a> or <a href="https://wa.me/+919902930443?text=Hi%2C%20could%20you%20please%20share%20details%20about%20the%20Ayodhya%20and%20Varanasi%20luxury%20pilgrimage%20by%20Saum%3F" target="_blank" rel="noopener">WhatsApp</a> us at +91 99029 30443.</p>
+    </div>
+  </main>
+
+  <!-- Custom LP Footer (matches /temples/av2) -->
+  <footer class="lp-footer">
+    <div class="container">
+      <div class="footer-contacts">
+        <a href="tel:+919902930443"><i class="fas fa-phone"></i> +91 99029 30443</a>
+        <a href="https://wa.me/+919902930443?text=Hi%2C%20could%20you%20please%20share%20details%20about%20the%20Ayodhya%20and%20Varanasi%20luxury%20pilgrimage%20by%20Saum%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="mailto:info@saum.in"><i class="fas fa-envelope"></i> info@saum.in</a>
+      </div>
+      <div class="policy-links">
+        <a href="/policies/terms-and-conditions.html" target="_blank">Terms &amp; Conditions</a>
+        <a href="/policies/privacy-policy.html" target="_blank">Privacy Policy</a>
+        <a href="/policies/refunds-cancellations.html" target="_blank">Refunds &amp; Cancellations</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Saum. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = 'Submitting\u2026';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSdmQdzwvApt4Zp7tUEuxuV2HZy8Bv_596oIBawcscnU6LZJjw/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+      .then(function () {
+        form.reset();
+        gtag('event', 'generate_lead', { event_category: 'ContactForm', event_label: 'contact-form' });
+        const successMessage = document.getElementById('success-message');
+        successMessage.classList.add('active');
+        setTimeout(function () {
+          successMessage.classList.remove('active');
+        }, 5000);
+      })
+      .catch(function (error) {
+        console.error('Error:', error);
+        alert('There was an error submitting the form. Please try again later.');
+      })
+      .finally(function () {
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+      });
+    }
+  </script>
+</body>
+</html>

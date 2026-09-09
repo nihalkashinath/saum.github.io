@@ -652,7 +652,7 @@ layout: default
                 <textarea id="query" name="entry.1160932882" placeholder="Please share any specific requirements, questions, or if you'd like us to call you back."></textarea>
               </div>
               <div class="consent-checkbox">
-                <input type="checkbox" id="consent" name="entry.132278656" value="Yes" required>
+                <input type="checkbox" id="consent" name="entry.132278656" value="Yes" required title="Please check this box and permit us to contact you." oninvalid="this.setCustomValidity('Please check this box and permit us to contact you.')" onchange="this.setCustomValidity('')">
                 <label for="consent">By submitting this, I agree to receive communication from Saum</label>
               </div>
               <div class="form-submit">
