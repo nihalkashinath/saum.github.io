@@ -239,6 +239,13 @@ layout: default
       animation: fadeIn 0.5s ease-in-out;
     }
 
+    .success-message p { margin-bottom: 1.2rem; }
+
+    .success-message .btn-orange {
+      color: var(--white);
+      margin-top: 0.2rem;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -350,7 +357,7 @@ layout: default
     <div class="container">
       <div class="form-card">
         <h1 class="form-title">Connect With Saum</h1>
-        <p class="form-subtitle">Please share your details below and our team will contact you shortly.</p>
+        <p class="form-subtitle">Please share your details below to download the brochure. Our team will contact you shortly thereafter.</p>
 
         <form id="contactForm" onsubmit="submitForm(event)">
           <input type="hidden" name="entry.2014457755" value="Seattle">
@@ -383,6 +390,7 @@ layout: default
 
         <div class="success-message" id="success-message">
           <p>Thank you for reaching out! Your message has been received, and we will contact you shortly.</p>
+          <a href="/assets/downloads/Varanasi_Ayodhya_Brochure.pdf" class="btn-orange" download>Download Brochure</a>
         </div>
       </div>
 
@@ -429,9 +437,6 @@ layout: default
         gtag('event', 'generate_lead', { event_category: 'ContactForm', event_label: 'contact-form' });
         const successMessage = document.getElementById('success-message');
         successMessage.classList.add('active');
-        setTimeout(function () {
-          successMessage.classList.remove('active');
-        }, 5000);
       })
       .catch(function (error) {
         console.error('Error:', error);
